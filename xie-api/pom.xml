@@ -33,12 +33,12 @@
              <groupId>cn.com.sinosafe.agent</groupId>
              <artifactId>agent-user</artifactId>
              <version>${agent.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>cn.com.sinosafe.agent</groupId>
-             <artifactId>agent-common</artifactId>
-             <version>${agent.version}</version>
          </dependency>-->
+         <dependency>
+             <groupId>cn.com.sinosafe</groupId>
+             <artifactId>xie-common</artifactId>
+             <version>${agent.version}</version>
+         </dependency>
         <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-um-starter</artifactId>

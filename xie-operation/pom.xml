@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>cn.com.sinosafe</groupId>
+        <artifactId>Haxb-Outsource-Xie</artifactId>
+        <version>${agent.version}</version>
+    </parent>
+    <packaging>jar</packaging>
+    <groupId>cn.com.sinosafe</groupId>
+    <artifactId>xie-operation</artifactId>
+    <name>xie-operation</name>
+    <description>运营管理</description>
+    <url>http://maven.apache.org</url>
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.sinosafe.agent</groupId>
+            <artifactId>agent-common</artifactId>
+            <version>${agent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe.lina</groupId>
+            <artifactId>lina-mybatis-mysql-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe.lina</groupId>
+            <artifactId>lina-mybatis-kylin-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe.agent</groupId>
+            <artifactId>agent-user</artifactId>
+            <version>${agent.version}</version>
+        </dependency>
+    </dependencies>
+</project>
