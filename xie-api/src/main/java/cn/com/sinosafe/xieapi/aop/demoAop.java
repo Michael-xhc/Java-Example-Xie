@@ -24,7 +24,7 @@ public class demoAop {
     @Component
     @Aspect
     public class AspectImpl {
-        @Pointcut("@annotation(cn.com.sinosafe.xiecommon.annotation)")
+        @Pointcut("@annotation(cn.com.sinosafe.xiecommon.annotation.Authentication)")
         private void cut() {
             System.out.println("3");
         }

@@ -18,14 +18,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.com.sinosafe.agent</groupId>
-            <artifactId>agent-common</artifactId>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>xie-common</artifactId>
             <version>${agent.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-mybatis-mysql-starter</artifactId>
@@ -35,8 +35,8 @@
             <artifactId>lina-mybatis-kylin-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>cn.com.sinosafe.agent</groupId>
-            <artifactId>agent-user</artifactId>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>xie-user</artifactId>
             <version>${agent.version}</version>
         </dependency>
     </dependencies>
