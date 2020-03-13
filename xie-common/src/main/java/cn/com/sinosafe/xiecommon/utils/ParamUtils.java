@@ -1,8 +1,8 @@
 package cn.com.sinosafe.xiecommon.utils;
 
-import cn.com.sinosafe.agent.common.code.AgentResponseCode;
-import cn.com.sinosafe.agent.common.code.ResultCode;
-import cn.com.sinosafe.agent.common.exception.BusinessException;
+import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
+import cn.com.sinosafe.xiecommon.code.ResultCode;
+import cn.com.sinosafe.xiecommon.exception.BusinessException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

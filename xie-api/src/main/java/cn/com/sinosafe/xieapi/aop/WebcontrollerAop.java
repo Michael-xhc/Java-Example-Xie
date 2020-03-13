@@ -10,7 +10,7 @@
  */
 package cn.com.sinosafe.xieapi.aop;
 
-import cn.com.sinosafe.agent.common.utils.JSONUtils;
+import cn.com.sinosafe.xiecommon.utils.JSONUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.catalina.core.ApplicationPart;
 import org.aspectj.lang.JoinPoint;

@@ -1,14 +1,13 @@
+/*
 package cn.com.sinosafe.xiecommon.commonService;
 
-import cn.com.sinosafe.agent.common.code.AgentResponseCode;
-import cn.com.sinosafe.agent.common.exception.BusinessException;
-import cn.com.sinosafe.agent.common.utils.HttpUtil;
-import cn.com.sinosafe.agent.common.utils.JSONUtils;
-import cn.com.sinosafe.agent.common.utils.ParamUtils;
-import cn.com.sinosafe.agent.common.utils.SystemConfigUtils;
+import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
+import cn.com.sinosafe.xiecommon.exception.BusinessException;
+import cn.com.sinosafe.xiecommon.utils.HttpUtil;
+import cn.com.sinosafe.xiecommon.utils.JSONUtils;
+import cn.com.sinosafe.xiecommon.utils.ParamUtils;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
-import com.sinosafe.service.cmis.CopAppApplyService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+*/
 /**
  * @PACKAGE_NAME: cn.com.sinosafe.agent.common.commonService
  * @NAME: CommonService
@@ -26,7 +26,8 @@ import java.util.Objects;
  * @USER: xiehanchun
  * @time: 2020/2/12 16:34
  * @Version 1.0
- **/
+ **//*
+
 @Service
 public class CommonService {
 	
@@ -37,13 +38,15 @@ public class CommonService {
     @Autowired
     private SystemConfigUtils systemConfigUtils;
 	
-	/**
+	*/
+/**
 	 * @Title: getManagerInfoByPhone   
 	 * @Description: 根据手机号查询客户经理信息   
 	 * @param: phone
 	 * @return: Map<String,String>      
 	 * @throws
-	 */
+	 *//*
+
 	public JSONObject getManagerInfoByPhone(String phone){
 		JSONObject mgrInfoJson = null;
         try {
@@ -75,13 +78,15 @@ public class CommonService {
         }
 	}
 
-    /**
+    */
+/**
      * @Description: 四要素校验 姓名 身份证号 手机号码 银行卡号
      * @Param: [req] 姓名 身份证号 手机号码 银行卡号 流水号
      * @Return: boolean
      * @Author: xiehanchun
      * @Date: 2020/2/18
-     */
+     *//*
+
     @SuppressWarnings("unchecked")
     public boolean verify4Melements(JSONObject req) throws Exception {
 
@@ -130,13 +135,15 @@ public class CommonService {
         return resultFlag;
     }
 
-    /**
+    */
+/**
      * @Description: 亚联所有接口-开户行识别
      * @Param: []
      * @Return: java.lang.String
      * @Author: xiehanchun
      * @Date: 2020/2/25
-     */
+     *//*
+
     public JSONObject bankIdentification(JSONObject req) throws Exception{
         ParamUtils.notNull(req, "req");
         String bankCardNo = req.getString("bankCardNo");
@@ -192,3 +199,4 @@ public class CommonService {
         return rsp;
     }
 }
+*/

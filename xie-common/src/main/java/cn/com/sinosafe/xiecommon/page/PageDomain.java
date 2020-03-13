@@ -1,6 +1,6 @@
 package cn.com.sinosafe.xiecommon.page;
 
-import cn.com.sinosafe.agent.common.utils.StringUtils;
+import cn.com.sinosafe.xiecommon.utils.StringUtils;
 
 /**
  * 分页数据

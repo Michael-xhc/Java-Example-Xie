@@ -1,6 +1,6 @@
 package cn.com.sinosafe.xiecommon.utils;
 
-import cn.com.sinosafe.agent.common.annotation.Excel;
+import cn.com.sinosafe.xiecommon.annotation.Excel;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor.HSSFColorPredefined;
 import org.apache.poi.ss.usermodel.*;

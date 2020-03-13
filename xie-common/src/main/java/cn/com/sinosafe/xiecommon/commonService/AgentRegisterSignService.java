@@ -3,9 +3,9 @@
  */
 package cn.com.sinosafe.xiecommon.commonService;
 
-import cn.com.sinosafe.agent.common.code.AgentResponseCode;
-import cn.com.sinosafe.agent.common.exception.BusinessException;
-import cn.com.sinosafe.agent.common.utils.HttpUtil;
+import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
+import cn.com.sinosafe.xiecommon.exception.BusinessException;
+import cn.com.sinosafe.xiecommon.utils.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

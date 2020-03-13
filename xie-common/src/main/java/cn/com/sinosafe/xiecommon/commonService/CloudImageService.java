@@ -1,17 +1,17 @@
 package cn.com.sinosafe.xiecommon.commonService;
 
-import cn.com.sinosafe.agent.common.code.AgentResponseCode;
-import cn.com.sinosafe.agent.common.exception.BusinessException;
-import cn.com.sinosafe.agent.common.properte.ImageCloudProperties;
-import cn.com.sinosafe.agent.common.utils.JSONUtils;
-import cn.com.sinosafe.agent.common.utils.ParamUtils;
-import cn.com.sinosafe.agent.common.utils.StringUtils;
 import cn.com.sinosafe.lina.image.cloud.ICloudImageApi;
 import cn.com.sinosafe.lina.image.cloud.configuration.CloudImageProperties;
 import cn.com.sinosafe.lina.image.cloud.dto.BizInfo;
 import cn.com.sinosafe.lina.image.cloud.dto.FileInfo;
 import cn.com.sinosafe.lina.image.cloud.dto.PathInfo;
 import cn.com.sinosafe.lina.image.cloud.dto.UploadInfo;
+import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
+import cn.com.sinosafe.xiecommon.exception.BusinessException;
+import cn.com.sinosafe.xiecommon.properte.ImageCloudProperties;
+import cn.com.sinosafe.xiecommon.utils.JSONUtils;
+import cn.com.sinosafe.xiecommon.utils.ParamUtils;
+import cn.com.sinosafe.xiecommon.utils.StringUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

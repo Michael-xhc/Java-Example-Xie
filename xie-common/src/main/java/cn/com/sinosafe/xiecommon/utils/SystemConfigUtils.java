@@ -1,11 +1,11 @@
 /**
  * 
- */
+ *//*
+
 package cn.com.sinosafe.xiecommon.utils;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
-import com.sinosafe.service.cmis.CopAppApplyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -14,12 +14,14 @@ import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
 
-/**  
+*/
+/**
 * <p>Title: SystemConfigUtils</p>  
 * <p>Description: 查询字典工具类</p>  
 * @author longxiaoqiang  
 * @date 2020年2月13日  
-*/
+*//*
+
 @Component
 public class SystemConfigUtils {
 	
@@ -66,3 +68,4 @@ public class SystemConfigUtils {
 		return null;
 	}
 }
+*/

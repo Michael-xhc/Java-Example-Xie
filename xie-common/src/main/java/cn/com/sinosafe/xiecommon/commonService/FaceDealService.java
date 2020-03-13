@@ -1,12 +1,12 @@
 /**
  * 
- */
+ *//*
+
 package cn.com.sinosafe.xiecommon.commonService;
 
-import cn.com.sinosafe.agent.common.code.AgentResponseCode;
-import cn.com.sinosafe.agent.common.exception.BusinessException;
-import cn.com.sinosafe.agent.common.utils.HttpUtil;
-import cn.com.sinosafe.agent.common.utils.SystemConfigUtils;
+import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
+import cn.com.sinosafe.xiecommon.exception.BusinessException;
+import cn.com.sinosafe.xiecommon.utils.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,12 +16,14 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-/**  
+*/
+/**
 * <p>Title: FaceFroWeixinService</p>  
 * <p>Description: 人脸识别接口</p>  
 * @author longxiaoqiang  
 * @date 2020年2月24日  
-*/
+*//*
+
 @Component
 public class FaceDealService {
 	
@@ -29,12 +31,14 @@ public class FaceDealService {
 
 	@Autowired
 	SystemConfigUtils systemConfigUtils;
-	/**
+	*/
+/**
 	 * <p>Title: faceDealForWeixin</p>  
 	 * <p>Description: 获取微信人脸识别签名串</p>  
 	 * @param url
 	 * @return
-	 */
+	 *//*
+
 	public Map<String, Object> faceDealForWeixin (String url) {
 		
 		
@@ -52,14 +56,16 @@ public class FaceDealService {
 		return (Map<String, Object>) JSONObject.parseObject(rspJson);
 	}
 	
-	/**
+	*/
+/**
 	 * <p>Title: faceDealForToken</p>  
 	 * <p>Description: 获取h5请求人脸识别的token</p>  
 	 * @param userName
 	 * @param certNo
 	 * @param notifyUrl
 	 * @return
-	 */
+	 *//*
+
 	public Map<String, Object> faceDealForToken (String userName,String certNo,String notifyUrl) {
 		
 		
@@ -78,12 +84,14 @@ public class FaceDealService {
 		logger.info("获取h5请求人脸识别的token返回信息：{}",rspJson);
 		return (Map<String, Object>) JSONObject.parseObject(rspJson);
 	}
-	/**
+	*/
+/**
 	 * <p>Title: getFaceDealResult</p>  
 	 * <p>Description: 获取h5人脸识别结果</p>  
 	 * @param bizId
 	 * @return
-	 */
+	 *//*
+
 	public Map<String, Object> getFaceDealResult (String bizId) {
 		
 		
@@ -101,11 +109,13 @@ public class FaceDealService {
 		return (Map<String, Object>) JSONObject.parseObject(rspJson);
 	}
 
-	/**
+	*/
+/**
 	 *  @author: liyong
 	 *  @Date: 2020-03-08 下午 12:17
 	 *  @Description: 获取微信公众号关注用户的信息
-	 */
+	 *//*
+
 	public JSONObject getMpUserInfo(String wxCode) {
         Map<String, Object> value = systemConfigUtils.getValue("GD_FACE_DEAL_URL");
         String resUrl = (String) value.get("gd_face_deal_weixingzh");
@@ -123,3 +133,4 @@ public class FaceDealService {
 
     }
 }
+*/

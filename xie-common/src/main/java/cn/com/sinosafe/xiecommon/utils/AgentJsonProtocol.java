@@ -1,9 +1,9 @@
 package cn.com.sinosafe.xiecommon.utils;
 
-import cn.com.sinosafe.agent.common.code.AgentResponseCode;
-import cn.com.sinosafe.agent.common.code.ResultCode;
 import cn.com.sinosafe.lina.common.protocol.ReturnBean;
 import cn.com.sinosafe.lina.common.protocol.ServiceException;
+import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
+import cn.com.sinosafe.xiecommon.code.ResultCode;
 
 /**
  * @ClassName:  AgentJsonProtocol   

@@ -1,3 +1,4 @@
+/*
 package cn.com.sinosafe.xiecommon.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,11 +8,13 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.*;
 import java.util.Map;
 
+*/
 /**
  * 文件处理工具类
  * 
  * @author ruoyi
- */
+ *//*
+
 @Component
 public class FileUtils
 {
@@ -19,13 +22,15 @@ public class FileUtils
 	@Autowired
 	private SystemConfigUtils systemConfigUtils;
 	
-    /**
+    */
+/**
      * 输出指定文件的byte数组
      * 
      * @param filePath 文件路径
      * @param os 输出流
      * @return
-     */
+     *//*
+
     public static void writeBytes(String filePath, OutputStream os) throws IOException
     {
         FileInputStream fis = null;
@@ -75,12 +80,14 @@ public class FileUtils
         }
     }
 
-    /**
+    */
+/**
      * 删除文件
      * 
      * @param filePath 文件
      * @return
-     */
+     *//*
+
     public static boolean deleteFile(String filePath)
     {
         boolean flag = false;
@@ -139,3 +146,4 @@ public class FileUtils
     }
 
 }
+*/
