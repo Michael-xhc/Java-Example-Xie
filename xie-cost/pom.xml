@@ -26,14 +26,14 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>-->
-        <dependency>
+        <!--<dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-mybatis-mysql-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-mybatis-kylin-starter</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>cn.com.sinosafe</groupId>
             <artifactId>xie-user</artifactId>

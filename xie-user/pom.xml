@@ -19,7 +19,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>-->
-        <dependency>
+      <!--  <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-mybatis-mysql-starter</artifactId>
         </dependency>
@@ -32,12 +32,12 @@
             <artifactId>xie-common</artifactId>
             <version>${agent.version}</version>
         </dependency>
-        <!-- 影像系统 -->
+        &lt;!&ndash; 影像系统 &ndash;&gt;
         <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-fileupload-starter</artifactId>
             <version>0.2.0-SNAPSHOT</version>
-        </dependency>
+        </dependency>-->
        <!-- <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>

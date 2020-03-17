@@ -12,7 +12,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <description>公共服务模块</description>
 
-    <dependencies>
+    <!--<dependencies>
         <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-redis-starter</artifactId>
@@ -93,19 +93,19 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- pagehelper 分页插件 -->
+        &lt;!&ndash; pagehelper 分页插件 &ndash;&gt;
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
             <version>${pagehelper.boot.version}</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi &ndash;&gt;
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
             <version>3.17</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml &ndash;&gt;
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
@@ -115,7 +115,7 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
-        <!--Google的Zxing包-->
+        &lt;!&ndash;Google的Zxing包&ndash;&gt;
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
@@ -142,6 +142,6 @@
             <version>4.12</version>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+    </dependencies>-->
 
 </project>

@@ -11,7 +11,7 @@
     <name>parent.project</name>
     <description>华安外包工程</description>
 
-    <dependencyManagement>
+    <!--<dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>cn.com.sinosafe.lina</groupId>
@@ -22,7 +22,7 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
+-->
     <properties>
         <agent.version>0.0.1-SNAPSHOT</agent.version>
         <java.version>1.8</java.version>

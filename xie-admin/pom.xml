@@ -37,22 +37,22 @@
             <artifactId>agent-common</artifactId>
             <version>${agent.version}</version>
         </dependency>-->
-        <dependency>
+  <!--      <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-um-starter</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-client</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-sso-client-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-dubbo-starter</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
@@ -68,10 +68,10 @@
             <artifactId>imgpf-filetrans</artifactId>
             <version>6.3</version>
         </dependency>
-        <dependency>
+       <!-- <dependency>
             <groupId>cn.com.sinosafe.lina</groupId>
             <artifactId>lina-fileupload-starter</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
         <dependency>
             <groupId>org.apache.velocity</groupId>

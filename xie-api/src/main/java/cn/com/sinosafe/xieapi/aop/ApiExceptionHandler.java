@@ -1,7 +1,5 @@
 package cn.com.sinosafe.xieapi.aop;
 
-import cn.com.sinosafe.xiecommon.exception.BusinessException;
-import cn.com.sinosafe.xiecommon.utils.AgentJsonProtocol;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;

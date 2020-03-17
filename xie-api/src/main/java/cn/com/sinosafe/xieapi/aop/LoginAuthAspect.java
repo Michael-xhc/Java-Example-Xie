@@ -1,8 +1,5 @@
 package cn.com.sinosafe.xieapi.aop;
 
-import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
-import cn.com.sinosafe.xiecommon.exception.BusinessException;
-import cn.com.sinosafe.xiecommon.utils.RedisUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.aspectj.lang.JoinPoint;

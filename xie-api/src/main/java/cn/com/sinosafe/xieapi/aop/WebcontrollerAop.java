@@ -10,7 +10,6 @@
  */
 package cn.com.sinosafe.xieapi.aop;
 
-import cn.com.sinosafe.xiecommon.utils.JSONUtils;
 import com.alibaba.fastjson.JSONObject;
 import org.apache.catalina.core.ApplicationPart;
 import org.aspectj.lang.JoinPoint;
@@ -42,7 +41,7 @@ public class WebcontrollerAop {
      * 指定切点
      * 匹配 cn.com.sinosafe.haFin.api.controller包及其子包下的所有类的所有方法
      */
-    @Pointcut("execution(* cn.com.sinosafe.agent.api..*.*(..))")
+    @Pointcut("execution(* cn.com.sinosafe.xieapi..*.*(..))")
     public void  optlog(){
     }
 
@@ -114,7 +113,7 @@ public class WebcontrollerAop {
 			reqJson.put("请求链接", reqUrl);
 			reqJson.put("请求类型", method);
 			reqJson.put("请求参数", reqParams);
-			logger.info("【请求日志拦截】拦截信息:{}", JSONUtils.getSingleInstance().responseFormat(reqJson.toJSONString()));
+//			logger.info("【请求日志拦截】拦截信息:{}", JSONUtils.getSingleInstance().responseFormat(reqJson.toJSONString()));
 		} catch (Exception e) {
 			logger.info("【请求日志拦截】拦截信息:{}", "获取请求参数信息失败!");
 			throw e;
@@ -123,7 +122,7 @@ public class WebcontrollerAop {
 			JSONObject rspJson = new JSONObject();
 			rspJson.put("请求耗时", (System.currentTimeMillis() - start)+"毫秒");
 			rspJson.put("返回结果", JSONObject.toJSONString(result));
-			logger.info("【响应日志拦截】拦截信息:{}", JSONUtils.getSingleInstance().responseFormat(rspJson.toString()));
+//			logger.info("【响应日志拦截】拦截信息:{}", JSONUtils.getSingleInstance().responseFormat(rspJson.toString()));
 		}
         return result;
 
