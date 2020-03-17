@@ -1,4 +1,4 @@
-/**
+import org.springframework.stereotype.Component;/**
  * All rights Reserved, Designed By www.sinosafe.com.cn
  * @Title:  WebcontrollerAop.java
  * @Package cn.com.sinosafe.haFin.api.controller
@@ -7,7 +7,8 @@
  * @date:   2020年1月16日 上午11:49:58
  * @version V1.0
  * @Copyright:
- */
+
+
 package cn.com.sinosafe.xieapi.aop;
 
 import com.alibaba.fastjson.JSONObject;
@@ -24,71 +25,78 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
 
-/**
+*
  * @ClassName:  WebcontrollerAop
  * @Description:输入输出参数打印
  * @author: HuYang
  * @date:   2020年1月16日 上午11:49:58
  * @Copyright:
- */
+
+
 @Aspect
 @Component
 public class WebcontrollerAop {
 
 	private static final Logger logger = LoggerFactory.getLogger(WebcontrollerAop.class);
 
-	/**
+*
      * 指定切点
      * 匹配 cn.com.sinosafe.haFin.api.controller包及其子包下的所有类的所有方法
-     */
+
+
     @Pointcut("execution(* cn.com.sinosafe.xieapi..*.*(..))")
     public void  optlog(){
     }
 
-    /**
+*
      * 前置通知，方法调用前被调用
      * @param joinPoint
-     */
+
+
     @Before("optlog()")
     public void doBefore(JoinPoint joinPoint){
 
     }
 
-    /**
+*
      * 处理完请求返回内容
      * @param ret
      * @throws Throwable
-     */
+
+
 
     @AfterReturning(returning = "ret", pointcut = "optlog()")
     public void doAfterReturning(Object ret) throws Throwable {
 
     }
 
-    /**
+*
      * 后置异常通知
      * @param jp
-     */
+
+
 
     @AfterThrowing("optlog()")
     public void throwss(JoinPoint jp){
 
     }
 
-    /**
+*
      * 后置最终通知,final增强，不管是抛出异常或者正常退出都会执行
      * @param jp
-     */
+
+
     @After("optlog()")
     public void after(JoinPoint jp){
 
     }
 
-    /**
+*
      * 环绕通知,环绕增强，相当于MethodInterceptor
      * @param pjp
      * @return
-     */
+
+
 
     @Around("optlog()")
     public Object arround(ProceedingJoinPoint pjp) throws Throwable{
@@ -145,12 +153,13 @@ public class WebcontrollerAop {
         return reqParams;
     }
 
-    /**
+*
      * 反射获取POST请求参数
      *
      * @param obj
      * @return
-     */
+
+
     @SuppressWarnings("rawtypes")
     public static JSONObject getKeyAndValue(Object obj) {
         JSONObject paraJson = new JSONObject();
@@ -179,3 +188,4 @@ public class WebcontrollerAop {
         return paraJson;
     }
 }
+*/

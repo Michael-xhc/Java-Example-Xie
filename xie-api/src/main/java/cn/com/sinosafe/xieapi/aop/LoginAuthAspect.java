@@ -1,3 +1,4 @@
+/*
 package cn.com.sinosafe.xieapi.aop;
 
 import com.alibaba.fastjson.JSONObject;
@@ -14,13 +15,15 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+*/
 /**
  * @ClassName:  LoginAuthAspect   
  * @Description:登录鉴权切面  
  * @author: HuYang
  * @date:   2020年2月12日 上午10:46:22      
  * @Copyright:
- */
+ *//*
+
 @Aspect
 @Component
 public class LoginAuthAspect{
@@ -57,3 +60,4 @@ public class LoginAuthAspect{
 //		logger.info("【登录拦截器】登录验证通过.phone={}, userId= {}", userBaseInfo.getPhoneNumber(), userBaseInfo.getUserId());
     }
 }
+*/

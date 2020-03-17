@@ -1,3 +1,4 @@
+/*
 package cn.com.sinosafe.xieapi.aop;
 
 import org.springframework.http.HttpStatus;
@@ -6,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+*/
 /**
  * 
  * @ClassName:  ApiExceptionHandler   
@@ -13,17 +15,20 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
  * @author: HuYang
  * @date:   2020年2月11日 下午7:56:09      
  * @Copyright:
- */
+ *//*
+
 @RestControllerAdvice
 @ResponseBody
 public class ApiExceptionHandler {
 
-    /**
+    */
+/**
      * 拦截业务异常
      * 
      * @param exception
      * @return
-     */
+     *//*
+
     @ExceptionHandler(BusinessException.class)
     public AgentJsonProtocol handleBusinessException(BusinessException be) {
 
@@ -38,12 +43,14 @@ public class ApiExceptionHandler {
         return rspObj;
     }
 
-    /**
+    */
+/**
      * 其它异常
      * 
      * @param exception
      * @return
-     */
+     *//*
+
     @ExceptionHandler
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
     public AgentJsonProtocol hadleServerException(Exception exception) {
@@ -54,3 +61,4 @@ public class ApiExceptionHandler {
         return AgentJsonProtocol.fail();
     }
 }
+*/
