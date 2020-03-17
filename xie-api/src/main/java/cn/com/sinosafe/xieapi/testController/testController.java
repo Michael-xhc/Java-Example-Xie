@@ -27,8 +27,9 @@ public class testController {
         //1 2 3 4 5 6 7 9 11
 
         System.out.println("数组长度----》"+nums.length);
-       for(int i = 0; i < nums.length; i++){
+       for(int i = 0; i < nums.length - 1; i++){
            int temp = 0;
+           //冒泡
            for(int j = 0;j < nums.length-i-1;j++) {
                if (nums[j] > nums[j + 1]) {
                    temp = nums[j];
@@ -49,7 +50,8 @@ public class testController {
         //1 2 7 4 9 6 3 5 11
 
         System.out.println("数组长度----》"+nums.length);
-        for(int i = 0; i < nums.length; i++){
+        //选择
+        for(int i = 0; i < nums.length - 1; i++){
             int temp = 0;
             for (int j = i;j < nums.length - 1 -i; j++){
                 if(nums[i] > nums[j]){
@@ -70,6 +72,7 @@ public class testController {
         //1 3 4 5 6 7 9 11
         //1 3 4  7 9
         //已知循环用for 未知循环次数用while
+        //插入
        /* int t = 0;
         int n = 0;
         for(int i = 0;i < nums.length;i++){
@@ -89,24 +92,28 @@ public class testController {
         //3, 4, 7, 1, 9, 6, 2, 5, 11
        int n = 0;
        int t = 0;
-        for(int i = 0; i < nums.length; i++){
-           int j = i-1;
-           t =  nums[i];
-           for(; j >= 0; j--) {
-               if(nums[j] > t){
-                   nums[j+1] = nums[j];
-               }
-           }
-           nums[j+1] = t;
-         /* n = i-1;
-          t = nums[i];
-          while(n >= 0 && nums[n] > nums[i]){
-              nums[n+1] = nums[n];
-              n--;
-          }
-          nums[n+1] =nums[i];*/
+        for(int i = 1; i < nums.length; i++){
 
+          if(nums[i] < nums[i - 1]) {
+              n = nums[i];
+              int j = i - 1;
+              for (; j >= 0 && nums[j] > n; j--) {
+                    nums[j+1] = nums[j];
+              }
+              nums[j + 1] = n;
+          }
        }
+
+       /* for(int i = 0; i<nums.length; i++){
+            int n = nums[i];
+            int t = i-1;
+            while (t >= 0 && nums[t]>n){
+                nums[t+1] = nums[t];
+                t--;
+            }
+            nums[t+1] = n;
+        }*/
+        //做排序 主要计算流程要很清楚 全部变量 局部变量灵活运用 多变化方法不要一个方法走到底  不然继续下去可能就是死循环
            for (int num : nums) {
                System.out.println(num);
            }
