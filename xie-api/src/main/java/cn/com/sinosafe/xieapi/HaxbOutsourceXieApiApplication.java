@@ -8,6 +8,7 @@ public class HaxbOutsourceXieApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HaxbOutsourceXieApiApplication.class, args);
+        System.out.println("(♥◠‿◠)ﾉﾞ  个人代理启动成功   ლ(´ڡ`ლ)ﾞ  \n");
     }
 
 }

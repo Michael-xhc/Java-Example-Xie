@@ -14,12 +14,12 @@
 
 
     <dependencies>
-        <!-- <dependency>
-             <groupId>cn.com.sinosafe.agent</groupId>
-             <artifactId>agent-cost</artifactId>
+         <dependency>
+             <groupId>cn.com.sinosafe</groupId>
+             <artifactId>xie-cost</artifactId>
              <version>${agent.version}</version>
          </dependency>
-         <dependency>
+       <!--  <dependency>
              <groupId>cn.com.sinosafe.agent</groupId>
              <artifactId>agent-operation</artifactId>
              <version>${agent.version}</version>
@@ -93,6 +93,16 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
         </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+            <version>2.0.4.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
