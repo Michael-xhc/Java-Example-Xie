@@ -8,6 +8,7 @@
 package cn.com.sinosafe.xieapi.cost;
 
 import cn.com.sinosafe.xie.cost.service.CostService;
+import cn.com.sinosafe.xie.cost.service.impl.CostServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +30,6 @@ public class CostController {
 
     @PostMapping("/returnUrl")
     public String returnUrl(){
-        return "1";
+        return costService.returnUrl();
     }
 }

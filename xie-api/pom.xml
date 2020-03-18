@@ -19,89 +19,14 @@
              <artifactId>xie-cost</artifactId>
              <version>${agent.version}</version>
          </dependency>
-       <!--  <dependency>
-             <groupId>cn.com.sinosafe.agent</groupId>
-             <artifactId>agent-operation</artifactId>
-             <version>${agent.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>cn.com.sinosafe.agent</groupId>
-             <artifactId>agent-product</artifactId>
-             <version>${agent.version}</version>
-         </dependency>
-         <dependency>
-             <groupId>cn.com.sinosafe.agent</groupId>
-             <artifactId>agent-user</artifactId>
-             <version>${agent.version}</version>
-         </dependency>-->
          <dependency>
              <groupId>cn.com.sinosafe</groupId>
              <artifactId>xie-common</artifactId>
              <version>${agent.version}</version>
          </dependency>
-        <!--<dependency>
-            <groupId>cn.com.sinosafe.lina</groupId>
-            <artifactId>lina-um-starter</artifactId>
-        </dependency>-->
-      <!--  <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-config-client</artifactId>
-        </dependency>-->
-       <!-- <dependency>
-            <groupId>cn.com.sinosafe.lina</groupId>
-            <artifactId>lina-sso-client-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe.lina</groupId>
-            <artifactId>lina-dubbo-starter</artifactId>
-        </dependency>-->
-        <!--<dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>4.1.25.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-resolver-dns</artifactId>
-            <version>4.1.31.Final</version>
-        </dependency>-->
-       <!-- <dependency>
-            <groupId>cn.com.sinosafe.imgpf</groupId>
-            <artifactId>imgpf-filetrans</artifactId>
-            <version>6.3</version>
-        </dependency>-->
-        <!-- <dependency>
-             <groupId>cn.com.sinosafe.lina</groupId>
-             <artifactId>lina-fileupload-starter</artifactId>
-         </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.apache.velocity/velocity -->
-<!--        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
-            <version>1.7</version>
-        </dependency>-->
-      <!--  <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>-->
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-websocket</artifactId>
-            <version>2.0.4.RELEASE</version>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
     </dependencies>
 
@@ -110,7 +35,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.1.1.RELEASE</version>
+                <version>2.1.8.RELEASE</version>
                 <configuration>
                     <!-- 指定该Main Class为全局的唯一入口 -->
                     <mainClass>cn.com.sinosafe.xieadmin.HaxbOutsourceXieApiApplication</mainClass>
