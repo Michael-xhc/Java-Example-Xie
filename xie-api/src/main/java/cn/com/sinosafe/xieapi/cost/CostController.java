@@ -9,6 +9,7 @@ package cn.com.sinosafe.xieapi.cost;
 
 import cn.com.sinosafe.xie.cost.service.CostService;
 import cn.com.sinosafe.xie.cost.service.impl.CostServiceImpl;
+import cn.com.sinosafe.xiecommon.annotation.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +30,9 @@ public class CostController {
     private CostService costService;
 
     @PostMapping("/returnUrl")
+    @Authentication
     public String returnUrl(){
+        System.out.println("方法returnUrl");
         return costService.returnUrl();
     }
 }

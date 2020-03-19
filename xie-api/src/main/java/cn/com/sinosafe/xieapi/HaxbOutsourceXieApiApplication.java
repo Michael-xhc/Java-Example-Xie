@@ -5,11 +5,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-//@ComponentScan({"cn.com.sinosafe"})
+@ComponentScan("cn.com.sinosafe")
 public class HaxbOutsourceXieApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HaxbOutsourceXieApiApplication.class, args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  个人代理启动成功   ლ(´ڡ`ლ)ﾞ  \n");
+        System.out.println("(♥◠‿◠)ﾉﾞ  华安信保外包个人代理人项目客户端启动   ლ(´ڡ`ლ)ﾞ \n");
     }
 }
