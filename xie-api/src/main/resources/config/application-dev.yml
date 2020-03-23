@@ -1,1 +1,6 @@
-
+info:
+  build:
+    artifact: Haxb-Outsource-Xie
+    name: Haxb-Outsource-Xie
+    description: 信保个人代理人
+    version: dev

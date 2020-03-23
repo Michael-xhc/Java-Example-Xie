@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: Haxb-Outsource-Xie
+  profiles:
+    active: uat
+  cloud:
+    config:
+      label: Haxb-Outsource-Xie

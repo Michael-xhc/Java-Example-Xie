@@ -1,2 +1,6 @@
-server:
-  port: 49880
+info:
+  build:
+    artifact: '@project.artifactId@'
+    name: '@project.name@'
+    description: '@project.description@'
+    version: '@project.version@'
