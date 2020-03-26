@@ -148,16 +148,13 @@ public class testController {
         int res = nums.length;
         for (int i = 0; i < nums.length; i++) {
             for (int j = i; j <= nums.length; j++) {
-                int min = Integer.MAX_VALUE, //放最大值
-                max = Integer.MIN_VALUE, //放最小值
-                prev = Integer.MIN_VALUE; //放最小值
+                int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, prev = Integer.MIN_VALUE;
                 for (int k = i; k < j; k++) {
                     //min 放最大值
                     min = Math.min(min, nums[k]);
                     //max 放最小值
                     max = Math.max(max, nums[k]);
                 }
-                //怎么可能出现这种情况？？？
                 if ((i > 0 && nums[i - 1] > min) || (j < nums.length && nums[j] < max))
                     continue;
                 int k = 0;
