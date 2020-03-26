@@ -29,6 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
+        <starter-feign-version>1.4.3.RELEASE</starter-feign-version>
     </properties>
 
     <build>
