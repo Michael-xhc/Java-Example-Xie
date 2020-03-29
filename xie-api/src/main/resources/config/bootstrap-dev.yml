@@ -1,1 +1,11 @@
+server:
+  port: 45880
 
+# LOGGING
+logging:
+  path: D:\log
+  config: classpath:config/logback-spring.xml
+  level:
+    cn.com.sinosafe: debug
+    org.springframework: warn
+    org.spring.springboot.dao: debug

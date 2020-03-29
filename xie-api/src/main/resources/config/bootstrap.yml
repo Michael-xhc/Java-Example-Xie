@@ -2,7 +2,12 @@ spring:
   application:
     name: Haxb-Outsource-Xie
   profiles:
-    active: uat
+    active: dev
   cloud:
     config:
       label: Haxb-Outsource-Xie
+
+# MyBatis
+mybatis:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml

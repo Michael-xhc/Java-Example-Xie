@@ -4,3 +4,33 @@ info:
     name: Haxb-Outsource-Xie
     description: 信保个人代理人
     version: dev
+
+# database
+spring:
+  datasource:
+    #type: com.alibaba.druid.pool.DruidDataSource
+    #driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.1.23.10:6033/haxb_agent_sit?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: haxb_agent_sit
+    password: faof3912
+    initialSize: 30
+    minIdle: 5
+    maxActive: 100
+    maxWait: 5000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    removeAbandoned: true
+    removeAbandonedTimeout: 600
+    testWhileIdle: true
+    testOnBorrow: true
+    testOnReturn: true
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,slf4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  rabbitmq:
+    virtual-host: /xb-credit-app
+    host: 10.1.109.183
+    port: 5672
+    username: xb_credit_app
+    password: credit2017

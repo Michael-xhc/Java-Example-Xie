@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+	<property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
+	<!-- 控制台输出 -->
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 系统日志输出 -->
+	<appender name="file_info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <file>${LOG_PATH}/agent-api-info.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>${LOG_PATH}/agent-api-info.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 日志最大的历史 30天 -->
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>INFO</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+	</appender>
+	
+		<!-- <appender name="file_info_test" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <file>${LOG_PATH}/agent-api-info_test.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			按天回滚 daily
+			<fileNamePattern>${LOG_PATH}/agent-api-info_test.%d{yyyy-MM-dd}.log</fileNamePattern>
+			日志最大的历史 30天
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${log.pattern}</pattern>
+		</encoder>
+	</appender> -->
+	
+	<appender name="file_error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <file>${LOG_PATH}/agent-api-error.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/agent-api-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 日志最大的历史 60天 -->
+			<maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+    
+    <!-- <appender name="file_error_test" class="ch.qos.logback.core.rolling.RollingFileAppender">
+	    <file>${LOG_PATH}/agent-api-error_test.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${LOG_PATH}/agent-api-error_test.%d{yyyy-MM-dd}.log</fileNamePattern>
+			日志最大的历史 60天
+			<maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>${log.pattern}</pattern>
+        </encoder>
+    </appender> -->
+	
+	<logger name="druid.sql.Statement" level="DEBUG" />
+
+	<!-- 开发配置 -->
+	<springProfile name="dev">
+		<root level="debug">
+			<appender-ref ref="console" />
+			<appender-ref ref="file_info" />
+        	<appender-ref ref="file_error" />
+		</root>
+	</springProfile>
+	
+	<!-- 测试配置 -->
+	<springProfile name="test,uat">
+		<root level="info">
+			<appender-ref ref="console" />
+			<appender-ref ref="file_info" />
+        	<appender-ref ref="file_error" />
+		</root>
+	</springProfile>
+	
+	<!-- 生产配置 -->
+	<springProfile name="prod">
+		<root level="info">
+			<appender-ref ref="console" />
+			<appender-ref ref="file_info" />
+        	<appender-ref ref="file_error" />
+		</root>
+	</springProfile>
+	
+</configuration> 
