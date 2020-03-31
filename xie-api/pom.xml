@@ -10,7 +10,7 @@
 
     <groupId>cn.com.sinosafe</groupId>
     <artifactId>xie-api</artifactId>
-    <description>华安外包后台管理控制模块</description>
+    <description>华安外包api控制模块</description>
 
 
     <dependencies>
@@ -19,29 +19,51 @@
              <artifactId>xie-cost</artifactId>
              <version>${agent.version}</version>
          </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>xie-user</artifactId>
+            <version>${agent.version}</version>
+        </dependency>
          <dependency>
              <groupId>cn.com.sinosafe</groupId>
              <artifactId>xie-common</artifactId>
              <version>${agent.version}</version>
          </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.8.7</version>
         </dependency>
-       <!-- <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
-            <version>1.3.1.RELEASE</version>
-        </dependency>-->
+        <!--引用hystrix 可以解决bootstrap不展示图标问题-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-hystrix</artifactId>
-            <version>1.4.3.RELEASE</version>
+            <version>1.3.5.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.1.14</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.3.22.RELEASE</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis-spring</artifactId>
         </dependency>
     </dependencies>
 
@@ -50,7 +72,6 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>2.1.8.RELEASE</version>
                 <configuration>
                     <!-- 指定该Main Class为全局的唯一入口 -->
                     <mainClass>cn.com.sinosafe.xieadmin.HaxbOutsourceXieApiApplication</mainClass>

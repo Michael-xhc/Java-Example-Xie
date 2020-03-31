@@ -7,7 +7,7 @@
  */
 package cn.com.sinosafe.xiecommon.utils;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;

@@ -8,7 +8,6 @@
 package cn.com.sinosafe.xieapi.cost;
 
 import cn.com.sinosafe.xie.cost.service.CostService;
-import cn.com.sinosafe.xie.cost.service.impl.CostServiceImpl;
 import cn.com.sinosafe.xiecommon.annotation.Authentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

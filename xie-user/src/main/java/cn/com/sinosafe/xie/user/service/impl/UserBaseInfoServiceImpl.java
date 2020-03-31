@@ -1,0 +1,43 @@
+/**
+ * projectName: Haxb-Outsource-Xie
+ * packageName: cn.com.sinosafe.xie.user.service.impl
+ * fileName: UserBaseInfoServiceImpl.java
+ * date: 2020-03-31 11:50
+ * copyright(c) 2019-  华安保险公司
+ */
+package cn.com.sinosafe.xie.user.service.impl;
+
+import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
+import cn.com.sinosafe.xie.user.mapper.UserBaseInfoMapper;
+import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
+import cn.com.sinosafe.xiecommon.utils.RedisUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+/**
+ * @description: 用户
+ * @packageName: cn.com.sinosafe.xie.user.service.impl
+ * @className: UserBaseInfoServiceImpl
+ * @author: xiehanchun
+ * @data: 2020-03-31 11:50
+ * @version: v1.0
+ */
+@Service
+public class UserBaseInfoServiceImpl implements UserBaseInfoService {
+    private static final Logger logger = LoggerFactory.getLogger(UserBaseInfoServiceImpl.class);
+
+    @Autowired
+    private UserBaseInfoMapper userBaseInfoMapper;
+    @Resource
+    private RedisUtils redisUtils;
+
+    @Override
+    public List<UserBaseInfo> selectUserBaseInfo() throws Exception{
+        return userBaseInfoMapper.selectUserBaseInfo();
+    }
+}

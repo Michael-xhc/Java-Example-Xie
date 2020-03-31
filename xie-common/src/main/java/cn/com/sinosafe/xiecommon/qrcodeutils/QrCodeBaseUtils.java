@@ -7,7 +7,7 @@ import com.google.zxing.Result;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.HybridBinarizer;
 import net.coobird.thumbnailator.Thumbnails;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.imageio.IIOImage;
 import javax.imageio.ImageIO;

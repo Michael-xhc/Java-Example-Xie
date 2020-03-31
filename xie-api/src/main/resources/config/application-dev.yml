@@ -34,3 +34,16 @@ spring:
     port: 5672
     username: xb_credit_app
     password: credit2017
+  mail:
+    host: ds.sinosafe.com.cn
+    username: gjzxdk@ds.sinosafe.com.cn
+    password: Sno@afe18#
+    properties:
+      mail:
+        mime.splitlongparameters: false
+        smtp:
+          port: 7250
+          auth: true
+          starttls:
+            enable: false
+            required: false

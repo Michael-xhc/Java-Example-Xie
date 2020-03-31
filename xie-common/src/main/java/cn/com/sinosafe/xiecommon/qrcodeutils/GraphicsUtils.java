@@ -1,6 +1,6 @@
 package cn.com.sinosafe.xiecommon.qrcodeutils;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.*;

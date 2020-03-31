@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.com.sinosafe.xie.user.mapper.UserBaseInfoMapper">
+    <resultMap id="BaseResultMap" type="cn.com.sinosafe.xie.user.domain.UserBaseInfo">
+        <id column="USER_ID" jdbcType="INTEGER" property="userId" />
+        <result column="PHONE_NUMBER" jdbcType="VARCHAR" property="phoneNumber" />
+        <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+        <result column="SALT" jdbcType="INTEGER" property="salt" />
+        <result column="USER_TYPE" jdbcType="INTEGER" property="userType" />
+        <result column="AGENT_LEVEL_ID" jdbcType="INTEGER" property="agentLevelId" />
+        <result column="AGENT_LEVEL" jdbcType="INTEGER" property="agentLevel" />
+        <result column="USER_STATUS" jdbcType="INTEGER" property="userStatus" />
+        <result column="PHOTO_ADDR" jdbcType="VARCHAR" property="photoAddr" />
+        <result column="INVITER_TYPE" jdbcType="INTEGER" property="inviterType" />
+        <result column="INVITER_USER_ID" jdbcType="VARCHAR" property="inviterUserId" />
+        <result column="INVITER_NAME" jdbcType="VARCHAR" property="inviterName" />
+        <result column="OPEN_ID" jdbcType="VARCHAR" property="openId" />
+        <result column="WECHAT_NICK_NAME" jdbcType="VARCHAR" property="wechatNickName" />
+        <result column="APPLY_ID" jdbcType="VARCHAR" property="applyId" />
+        <result column="PRACTICE_NUMBER" jdbcType="VARCHAR" property="practiceNumber" />
+        <result column="LATEST_LOGIN_TIME" jdbcType="TIMESTAMP" property="latestLoginTime" />
+        <result column="LATEST_LOGIN_CITY" jdbcType="VARCHAR" property="latestLoginCity" />
+        <result column="REGISTRATION_ID" jdbcType="VARCHAR" property="registrationId" />
+        <result column="CREATED_BY" jdbcType="VARCHAR" property="createdBy" />
+        <result column="CREATED_TIME" jdbcType="TIMESTAMP" property="createdTime" />
+        <result column="UPDATED_BY" jdbcType="VARCHAR" property="updatedBy" />
+        <result column="UPDATED_TIME" jdbcType="TIMESTAMP" property="updatedTime" />
+        <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+        <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+        <result column="ACCOUNT_NUMBER" jdbcType="VARCHAR" property="accountNumber" />
+        <result column="ID_NUMBER" jdbcType="VARCHAR" property="idNumber" />
+        <result column="AGENCY_AREA_NAME" jdbcType="VARCHAR" property="agencyAreaName" />
+        <result column="BELONG_ORG_CODE" jdbcType="VARCHAR" property="belongOrgCode" />
+        <result column="BELONG_ORG_NAME" jdbcType="VARCHAR" property="belongOrgName" />
+        <result column="MANAGER_NAME" jdbcType="VARCHAR" property="managerName" />
+        <result column="AGENT_LEVELSTR" jdbcType="VARCHAR" property="agentLevelStr" />
+        <result column="APPLY_STATUS" jdbcType="VARCHAR" property="applyStatus" />
+        <result column="SALE_AGENT_CODE" jdbcType="VARCHAR" property="saleAgentCode" />
+        <result column="AGENT_LEVEL_NAME" jdbcType="VARCHAR" property="agentLevelName" />
+        <result column="COMMISSION_RATIO" jdbcType="DECIMAL" property="commissionRatio" />
+        <result column="AGENCY_AREA_CODE" jdbcType="VARCHAR" property="agencyAreaCode" />
+        <result column="MANAGER_PHONE" jdbcType="VARCHAR" property="managerPhone" />
+        <result column="UPLOAD_ADDR" jdbcType="VARCHAR" property="uploadAddr" />
+    </resultMap>
+  <sql id="Base_Column_List">
+    USER_ID, PHONE_NUMBER, PASSWORD, SALT, USER_TYPE, AGENT_LEVEL_ID, AGENT_LEVEL, USER_STATUS, 
+    PHOTO_ADDR, INVITER_TYPE, INVITER_USER_ID, INVITER_NAME, OPEN_ID, WECHAT_NICK_NAME, 
+    APPLY_ID, PRACTICE_NUMBER, LATEST_LOGIN_TIME, LATEST_LOGIN_CITY, REGISTRATION_ID, 
+    CREATED_BY, CREATED_TIME, UPDATED_BY, UPDATED_TIME,SALE_AGENT_CODE
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_base_info
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_user_base_info
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.com.sinosafe.xie.user.domain.UserBaseInfo">
+    insert into t_user_base_info (USER_ID, PHONE_NUMBER, PASSWORD, 
+      SALT, USER_TYPE, AGENT_LEVEL_ID, 
+      AGENT_LEVEL, USER_STATUS, PHOTO_ADDR, 
+      INVITER_TYPE, INVITER_USER_ID, INVITER_NAME, 
+      OPEN_ID, WECHAT_NICK_NAME, APPLY_ID, 
+      PRACTICE_NUMBER, LATEST_LOGIN_TIME, LATEST_LOGIN_CITY, 
+      REGISTRATION_ID, CREATED_BY, CREATED_TIME, 
+      UPDATED_BY, UPDATED_TIME)
+    values (#{userId,jdbcType=INTEGER}, #{phoneNumber,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{salt,jdbcType=INTEGER}, #{userType,jdbcType=INTEGER}, #{agentLevelId,jdbcType=INTEGER}, 
+      #{agentLevel,jdbcType=INTEGER}, #{userStatus,jdbcType=INTEGER}, #{photoAddr,jdbcType=VARCHAR}, 
+      #{inviterType,jdbcType=INTEGER}, #{inviterUserId,jdbcType=VARCHAR}, #{inviterName,jdbcType=VARCHAR}, 
+      #{openId,jdbcType=VARCHAR}, #{wechatNickName,jdbcType=VARCHAR}, #{applyId,jdbcType=VARCHAR}, 
+      #{practiceNumber,jdbcType=VARCHAR}, #{latestLoginTime,jdbcType=TIMESTAMP}, #{latestLoginCity,jdbcType=VARCHAR}, 
+      #{registrationId,jdbcType=VARCHAR}, #{createdBy,jdbcType=VARCHAR}, #{createdTime,jdbcType=TIMESTAMP}, 
+      #{updatedBy,jdbcType=VARCHAR}, #{updatedTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.com.sinosafe.xie.user.domain.UserBaseInfo" useGeneratedKeys="true" keyProperty="userId">
+    insert into t_user_base_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        USER_ID,
+      </if>
+      <if test="phoneNumber != null">
+        PHONE_NUMBER,
+      </if>
+      <if test="password != null">
+        PASSWORD,
+      </if>
+      <if test="salt != null">
+        SALT,
+      </if>
+      <if test="userType != null">
+        USER_TYPE,
+      </if>
+      <if test="agentLevelId != null">
+        AGENT_LEVEL_ID,
+      </if>
+      <if test="agentLevel != null">
+        AGENT_LEVEL,
+      </if>
+      <if test="userStatus != null">
+        USER_STATUS,
+      </if>
+      <if test="photoAddr != null">
+        PHOTO_ADDR,
+      </if>
+      <if test="inviterType != null">
+        INVITER_TYPE,
+      </if>
+      <if test="inviterUserId != null">
+        INVITER_USER_ID,
+      </if>
+      <if test="inviterName != null">
+        INVITER_NAME,
+      </if>
+      <if test="openId != null">
+        OPEN_ID,
+      </if>
+      <if test="wechatNickName != null">
+        WECHAT_NICK_NAME,
+      </if>
+      <if test="applyId != null">
+        APPLY_ID,
+      </if>
+      <if test="practiceNumber != null">
+        PRACTICE_NUMBER,
+      </if>
+      <if test="latestLoginTime != null">
+        LATEST_LOGIN_TIME,
+      </if>
+      <if test="latestLoginCity != null">
+        LATEST_LOGIN_CITY,
+      </if>
+      <if test="registrationId != null">
+        REGISTRATION_ID,
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY,
+      </if>
+      <if test="createdTime != null">
+        CREATED_TIME,
+      </if>
+      <if test="updatedBy != null">
+        UPDATED_BY,
+      </if>
+      <if test="updatedTime != null">
+        UPDATED_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="phoneNumber != null">
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        #{salt,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null">
+        #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="agentLevelId != null">
+        #{agentLevelId,jdbcType=INTEGER},
+      </if>
+      <if test="agentLevel != null">
+        #{agentLevel,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null">
+        #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="photoAddr != null">
+        #{photoAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="inviterType != null">
+        #{inviterType,jdbcType=INTEGER},
+      </if>
+      <if test="inviterUserId != null">
+        #{inviterUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="inviterName != null">
+        #{inviterName,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNickName != null">
+        #{wechatNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="applyId != null">
+        #{applyId,jdbcType=VARCHAR},
+      </if>
+      <if test="practiceNumber != null">
+        #{practiceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="latestLoginTime != null">
+        #{latestLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="latestLoginCity != null">
+        #{latestLoginCity,jdbcType=VARCHAR},
+      </if>
+      <if test="registrationId != null">
+        #{registrationId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null">
+        #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null">
+        #{updatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedTime != null">
+        #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.com.sinosafe.xie.user.domain.UserBaseInfo">
+    update t_user_base_info
+    <set>
+      <if test="phoneNumber != null">
+        PHONE_NUMBER = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null">
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="salt != null">
+        SALT = #{salt,jdbcType=INTEGER},
+      </if>
+      <if test="userType != null">
+        USER_TYPE = #{userType,jdbcType=INTEGER},
+      </if>
+      <if test="agentLevelId != null">
+        AGENT_LEVEL_ID = #{agentLevelId,jdbcType=INTEGER},
+      </if>
+      <if test="agentLevel != null">
+        AGENT_LEVEL = #{agentLevel,jdbcType=INTEGER},
+      </if>
+      <if test="userStatus != null">
+        USER_STATUS = #{userStatus,jdbcType=INTEGER},
+      </if>
+      <if test="photoAddr != null">
+        PHOTO_ADDR = #{photoAddr,jdbcType=VARCHAR},
+      </if>
+      <if test="inviterType != null">
+        INVITER_TYPE = #{inviterType,jdbcType=INTEGER},
+      </if>
+      <if test="inviterUserId != null">
+        INVITER_USER_ID = #{inviterUserId,jdbcType=VARCHAR},
+      </if>
+      <if test="inviterName != null">
+        INVITER_NAME = #{inviterName,jdbcType=VARCHAR},
+      </if>
+      <if test="openId != null">
+        OPEN_ID = #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="wechatNickName != null">
+        WECHAT_NICK_NAME = #{wechatNickName,jdbcType=VARCHAR},
+      </if>
+      <if test="applyId != null">
+        APPLY_ID = #{applyId,jdbcType=VARCHAR},
+      </if>
+      <if test="practiceNumber != null">
+        PRACTICE_NUMBER = #{practiceNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="latestLoginTime != null">
+        LATEST_LOGIN_TIME = #{latestLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="latestLoginCity != null">
+        LATEST_LOGIN_CITY = #{latestLoginCity,jdbcType=VARCHAR},
+      </if>
+      <if test="registrationId != null">
+        REGISTRATION_ID = #{registrationId,jdbcType=VARCHAR},
+      </if>
+      <if test="createdBy != null">
+        CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createdTime != null">
+        CREATED_TIME = #{createdTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedBy != null">
+        UPDATED_BY = #{updatedBy,jdbcType=VARCHAR},
+      </if>
+      <if test="updatedTime != null">
+        UPDATED_TIME = #{updatedTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="saleAgentCode != null">
+        SALE_AGENT_CODE = #{saleAgentCode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="cn.com.sinosafe.xie.user.domain.UserBaseInfo">
+    update t_user_base_info
+    set PHONE_NUMBER = #{phoneNumber,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      SALT = #{salt,jdbcType=INTEGER},
+      USER_TYPE = #{userType,jdbcType=INTEGER},
+      AGENT_LEVEL_ID = #{agentLevelId,jdbcType=INTEGER},
+      AGENT_LEVEL = #{agentLevel,jdbcType=INTEGER},
+      USER_STATUS = #{userStatus,jdbcType=INTEGER},
+      PHOTO_ADDR = #{photoAddr,jdbcType=VARCHAR},
+      INVITER_TYPE = #{inviterType,jdbcType=INTEGER},
+      INVITER_USER_ID = #{inviterUserId,jdbcType=VARCHAR},
+      INVITER_NAME = #{inviterName,jdbcType=VARCHAR},
+      OPEN_ID = #{openId,jdbcType=VARCHAR},
+      WECHAT_NICK_NAME = #{wechatNickName,jdbcType=VARCHAR},
+      APPLY_ID = #{applyId,jdbcType=VARCHAR},
+      PRACTICE_NUMBER = #{practiceNumber,jdbcType=VARCHAR},
+      LATEST_LOGIN_TIME = #{latestLoginTime,jdbcType=TIMESTAMP},
+      LATEST_LOGIN_CITY = #{latestLoginCity,jdbcType=VARCHAR},
+      REGISTRATION_ID = #{registrationId,jdbcType=VARCHAR},
+      CREATED_BY = #{createdBy,jdbcType=VARCHAR},
+      CREATED_TIME = #{createdTime,jdbcType=TIMESTAMP},
+      UPDATED_BY = #{updatedBy,jdbcType=VARCHAR},
+      SALE_AGENT_CODE = #{saleAgentCode,jdbcType=VARCHAR},
+      UPDATED_TIME = #{updatedTime,jdbcType=TIMESTAMP}
+    where USER_ID = #{userId,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectByPhone" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_base_info
+    where PHONE_NUMBER = #{phone,jdbcType=VARCHAR}
+  </select>
+  
+  <select id="selectUserBaseInfo" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user_base_info
+  </select>
+
+</mapper>

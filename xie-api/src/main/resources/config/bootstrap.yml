@@ -2,7 +2,7 @@ spring:
   application:
     name: Haxb-Outsource-Xie
   profiles:
-    active: dev
+    active: uat
   cloud:
     config:
       label: Haxb-Outsource-Xie

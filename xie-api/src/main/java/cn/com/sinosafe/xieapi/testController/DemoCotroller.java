@@ -7,6 +7,11 @@
  */
 package cn.com.sinosafe.xieapi.testController;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @description: 测试类
  * @packageName: cn.com.sinosafe.xieapi.testController
@@ -17,13 +22,22 @@ package cn.com.sinosafe.xieapi.testController;
  */
 public class DemoCotroller {
 
+//    public static void main(String[] args) {
+//         try {
+//             int i = 5/0;
+//         }catch (Exception e){
+//             System.out.println("抛出异常"+e.getMessage());
+//         }finally {
+//             System.out.println("last prinln");
+//         }
+//    }
+public static String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
+
+
     public static void main(String[] args) {
-         try {
-             int i = 5/0;
-         }catch (Exception e){
-             System.out.println("抛出异常"+e.getMessage());
-         }finally {
-             System.out.println("last prinln");
-         }
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, 2);
+        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_TIME);
+        System.out.println(sdf.format(calendar.getTime()));
     }
 }
