@@ -9,6 +9,7 @@ package cn.com.sinosafe.xieapi.user;
 
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
 import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
+import cn.com.sinosafe.xie.user.service.impl.UserBaseInfoServiceImpl;
 import cn.com.sinosafe.xiecommon.page.PageUtils;
 import cn.com.sinosafe.xiecommon.utils.AgentJsonProtocol;
 import com.alibaba.fastjson.JSONObject;
@@ -54,5 +55,21 @@ public class UserController {
         map.put("total",new PageInfo(list).getTotal());
         map.put("data",list);
         return AgentJsonProtocol.response(map);
+    }
+
+    public static void main(String[] args){
+        UserBaseInfoServiceImpl userBaseInfoService = new  UserBaseInfoServiceImpl();
+        PageUtils.startPage(2,10);
+        Map<String,Object> map = new HashMap<>(8);
+        List<UserBaseInfo> list = null;
+        try {
+            list = userBaseInfoService.selectUserBaseInfo();
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        map.put("total",new PageInfo(list).getTotal());
+        map.put("data",list);
+        System.out.println(map);
     }
 }

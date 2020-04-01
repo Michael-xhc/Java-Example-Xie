@@ -10,13 +10,11 @@ package cn.com.sinosafe.xie.user.service.impl;
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
 import cn.com.sinosafe.xie.user.mapper.UserBaseInfoMapper;
 import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
-import cn.com.sinosafe.xiecommon.utils.RedisUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -33,8 +31,6 @@ public class UserBaseInfoServiceImpl implements UserBaseInfoService {
 
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;
-    @Resource
-    private RedisUtils redisUtils;
 
     @Override
     public List<UserBaseInfo> selectUserBaseInfo() throws Exception{

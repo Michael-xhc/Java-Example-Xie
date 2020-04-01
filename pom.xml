@@ -23,6 +23,7 @@
         <module>xie-admin</module>
         <module>xie-product</module>
         <module>xie-operation</module>
+        <module>xie-common</module>
         <module>xie-user</module>
         <module>xie-cost</module>
     </modules>

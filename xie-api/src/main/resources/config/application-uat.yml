@@ -28,12 +28,6 @@ spring:
     maxPoolPreparedStatementPerConnectionSize: 20
     filters: stat,wall,slf4j
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-  rabbitmq:
-    virtual-host: /xb-credit-app
-    host: 10.1.109.183
-    port: 5672
-    username: xb_credit_app
-    password: credit2017
   mail:
     host: ds.sinosafe.com.cn
     username: gjzxdk@ds.sinosafe.com.cn
@@ -47,18 +41,6 @@ spring:
           starttls:
             enable: false
             required: false
-  redis:
-    cluster:
-      nodes:
-      - 10.2.108.40:7000
-      - 10.2.108.40:7001
-      - 10.2.108.40:7002
-      - 10.2.108.40:7003
-      - 10.2.108.40:7004
-      - 10.2.108.40:7005
-      max-redirects: 3
-    password: 123456
-    # 缓存模块
-    cache:
-      redis:
-        time-to-live: 1800000
+  mvc:
+    #这个配置只能有一个
+    static-path-pattern: /static/**
