@@ -1,7 +1,6 @@
 package cn.com.sinosafe.xie.user.mapper;
 
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
-import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

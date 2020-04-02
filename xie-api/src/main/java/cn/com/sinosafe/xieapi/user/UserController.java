@@ -9,16 +9,13 @@ package cn.com.sinosafe.xieapi.user;
 
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
 import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
-import cn.com.sinosafe.xie.user.service.impl.UserBaseInfoServiceImpl;
 import cn.com.sinosafe.xiecommon.page.PageUtils;
 import cn.com.sinosafe.xiecommon.utils.AgentJsonProtocol;
+import cn.com.sinosafe.xiecommon.utils.ParamUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +30,7 @@ import java.util.Map;
  * @version: v1.0
  */
 @RestController
-@RequestMapping("/app/user")
+@RequestMapping("/api/user")
 public class UserController {
     @Autowired
     private UserBaseInfoService userBaseInfoService;
@@ -46,30 +43,16 @@ public class UserController {
      * @return cn.com.sinosafe.xiecommon.utils.AgentJsonProtocol
      */
     @PostMapping("/getUserBaseInfo")
-    public AgentJsonProtocol getUserBaseInfo(@RequestParam JSONObject req) throws Exception{
+    public AgentJsonProtocol getUserBaseInfo(@RequestBody JSONObject req) throws Exception{
         Integer pageNum = req.getInteger("pageNum");
         Integer pageSize = req.getInteger("pageSize");
+        ParamUtils.notEmpty(pageNum+"","pageNum");
+        ParamUtils.notEmpty(pageSize+"","pageSize");
         PageUtils.startPage(pageNum,pageSize);
         Map<String,Object> map = new HashMap<>(8);
         List<UserBaseInfo> list = userBaseInfoService.selectUserBaseInfo();
         map.put("total",new PageInfo(list).getTotal());
         map.put("data",list);
         return AgentJsonProtocol.response(map);
-    }
-
-    public static void main(String[] args){
-        UserBaseInfoServiceImpl userBaseInfoService = new  UserBaseInfoServiceImpl();
-        PageUtils.startPage(2,10);
-        Map<String,Object> map = new HashMap<>(8);
-        List<UserBaseInfo> list = null;
-        try {
-            list = userBaseInfoService.selectUserBaseInfo();
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println(e.getMessage());
-        }
-        map.put("total",new PageInfo(list).getTotal());
-        map.put("data",list);
-        System.out.println(map);
     }
 }

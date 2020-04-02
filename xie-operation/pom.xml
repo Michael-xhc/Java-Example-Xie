@@ -13,16 +13,4 @@
     <name>xie-operation</name>
     <description>运营管理</description>
     <url>http://maven.apache.org</url>
-    <dependencies>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>xie-common</artifactId>
-            <version>${agent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>xie-user</artifactId>
-            <version>${agent.version}</version>
-        </dependency>
-    </dependencies>
 </project>

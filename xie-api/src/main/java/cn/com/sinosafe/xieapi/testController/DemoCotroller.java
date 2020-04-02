@@ -7,6 +7,8 @@
  */
 package cn.com.sinosafe.xieapi.testController;
 
+import cn.com.sinosafe.xiecommon.utils.ParamUtils;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -34,10 +36,16 @@ public class DemoCotroller {
 public static String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
 
 
+//    public static void main(String[] args) {
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.add(Calendar.DAY_OF_YEAR, 2);
+//        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_TIME);
+//        System.out.println(sdf.format(calendar.getTime()));
+//    }
+
     public static void main(String[] args) {
-        Calendar calendar = Calendar.getInstance();
-        calendar.add(Calendar.DAY_OF_YEAR, 2);
-        SimpleDateFormat sdf = new SimpleDateFormat(FORMAT_TIME);
-        System.out.println(sdf.format(calendar.getTime()));
+        String str = null;
+        ParamUtils.notEmpty(str,"name");
     }
+
 }

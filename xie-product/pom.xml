@@ -14,16 +14,4 @@
     <name>xie-product</name>
     <description>产品管理</description>
     <url>http://maven.apache.org</url>
-    <dependencies>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>xie-common</artifactId>
-            <version>${agent.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>xie-user</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 </project>

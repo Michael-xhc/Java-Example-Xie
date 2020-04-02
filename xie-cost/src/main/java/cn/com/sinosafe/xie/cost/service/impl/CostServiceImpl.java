@@ -8,7 +8,6 @@
 package cn.com.sinosafe.xie.cost.service.impl;
 
 import cn.com.sinosafe.xie.cost.service.CostService;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**

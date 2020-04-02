@@ -18,9 +18,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>xie-common</artifactId>
-            <version>${agent.version}</version>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
     </dependencies>
 </project>

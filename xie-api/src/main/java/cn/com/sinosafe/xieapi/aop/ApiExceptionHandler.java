@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
- * 
- * @ClassName:  ApiExceptionHandler   
- * @Description:异常统一处理拦截   
+ *
+ * @ClassName:  ApiExceptionHandler
+ * @Description:异常统一处理拦截
  * @author: xiehanchun
- * @date:   2020年2月11日 下午7:56:09      
+ * @date:   2020年2月11日 下午7:56:09
  * @Copyright:
  */
 
