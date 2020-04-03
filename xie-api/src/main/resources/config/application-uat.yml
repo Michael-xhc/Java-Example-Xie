@@ -44,3 +44,7 @@ spring:
   mvc:
     #这个配置只能有一个
     static-path-pattern: /static/**
+  redis:
+    host: 127.0.0.1
+    database: 0
+    port: 6379

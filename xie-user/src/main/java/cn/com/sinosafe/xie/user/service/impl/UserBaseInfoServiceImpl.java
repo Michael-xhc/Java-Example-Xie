@@ -10,6 +10,7 @@ package cn.com.sinosafe.xie.user.service.impl;
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
 import cn.com.sinosafe.xie.user.mapper.UserBaseInfoMapper;
 import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
+import com.alibaba.fastjson.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class UserBaseInfoServiceImpl implements UserBaseInfoService {
     private UserBaseInfoMapper userBaseInfoMapper;
 
     @Override
-    public List<UserBaseInfo> selectUserBaseInfo() throws Exception{
-        return userBaseInfoMapper.selectUserBaseInfo();
+    public List<UserBaseInfo> selectUserBaseInfo(JSONObject req) throws Exception{
+        return userBaseInfoMapper.selectUserBaseInfo(req);
     }
 }

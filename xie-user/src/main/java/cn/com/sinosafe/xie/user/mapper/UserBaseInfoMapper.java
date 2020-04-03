@@ -1,6 +1,7 @@
 package cn.com.sinosafe.xie.user.mapper;
 
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,5 +22,5 @@ public interface UserBaseInfoMapper {
 
     UserBaseInfo selectByPhone(String phone);
 
-    List<UserBaseInfo> selectUserBaseInfo();
+    List<UserBaseInfo> selectUserBaseInfo(JSONObject req);
 }

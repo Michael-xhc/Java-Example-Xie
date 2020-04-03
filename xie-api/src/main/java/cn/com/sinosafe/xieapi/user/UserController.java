@@ -11,9 +11,11 @@ import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
 import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
 import cn.com.sinosafe.xiecommon.page.PageUtils;
 import cn.com.sinosafe.xiecommon.utils.AgentJsonProtocol;
-import cn.com.sinosafe.xiecommon.utils.ParamUtils;
+import cn.com.sinosafe.xiecommon.utils.Md5Utils;
+import cn.com.sinosafe.xiecommon.utils.RedisUtils;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,9 +33,14 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/api/user")
+@Slf4j
 public class UserController {
     @Autowired
     private UserBaseInfoService userBaseInfoService;
+    @Autowired
+    private RedisUtils redisUtils;
+
+    private static final String REDIS_KEY = "redis_key123";
 
     /**
      * @Description //TODO
@@ -46,13 +53,21 @@ public class UserController {
     public AgentJsonProtocol getUserBaseInfo(@RequestBody JSONObject req) throws Exception{
         Integer pageNum = req.getInteger("pageNum");
         Integer pageSize = req.getInteger("pageSize");
-        ParamUtils.notEmpty(pageNum+"","pageNum");
-        ParamUtils.notEmpty(pageSize+"","pageSize");
         PageUtils.startPage(pageNum,pageSize);
         Map<String,Object> map = new HashMap<>(8);
-        List<UserBaseInfo> list = userBaseInfoService.selectUserBaseInfo();
+        List<UserBaseInfo> list = userBaseInfoService.selectUserBaseInfo(req);
         map.put("total",new PageInfo(list).getTotal());
         map.put("data",list);
+        log.info("数据"+map);
         return AgentJsonProtocol.response(map);
+    }
+
+    @PostMapping("getRedis")
+    public AgentJsonProtocol getRedis(@RequestBody JSONObject req) throws Exception{
+//        String str = "18529350724";
+//        String hash = Md5Utils.hash(str);
+//        redisUtils.setValue(REDIS_KEY,hash);
+        Object value = redisUtils.getValue(REDIS_KEY);
+        return AgentJsonProtocol.response(value);
     }
 }

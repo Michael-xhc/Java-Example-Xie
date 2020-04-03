@@ -332,10 +332,13 @@
     where PHONE_NUMBER = #{phone,jdbcType=VARCHAR}
   </select>
   
-  <select id="selectUserBaseInfo" resultMap="BaseResultMap">
+  <select id="selectUserBaseInfo" parameterType="map" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from t_user_base_info
+    <if test="number != null">
+      LIMIT #{number,jdbcType=INTEGER}
+    </if>
   </select>
 
 </mapper>
