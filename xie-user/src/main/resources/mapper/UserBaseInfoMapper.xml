@@ -341,4 +341,13 @@
     </if>
   </select>
 
+    <select id="selectUserBase" resultType="cn.com.sinosafe.xie.user.domain.UserBaseInfo">
+      select
+      <include refid="Base_Column_List" />
+      from t_user_base_info
+      <if test="limit != null">
+        LIMIT #{limit,jdbcType=INTEGER}
+      </if>
+    </select>
+
 </mapper>

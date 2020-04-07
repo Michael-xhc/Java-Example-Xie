@@ -23,4 +23,6 @@ public interface UserBaseInfoMapper {
     UserBaseInfo selectByPhone(String phone);
 
     List<UserBaseInfo> selectUserBaseInfo(JSONObject req);
+
+    List<UserBaseInfo> selectUserBase(int limit);
 }

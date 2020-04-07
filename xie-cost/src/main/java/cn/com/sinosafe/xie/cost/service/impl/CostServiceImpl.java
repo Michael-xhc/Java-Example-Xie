@@ -8,6 +8,7 @@
 package cn.com.sinosafe.xie.cost.service.impl;
 
 import cn.com.sinosafe.xie.cost.service.CostService;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 /**
@@ -18,8 +19,8 @@ import org.springframework.stereotype.Service;
  * @data: 2020-03-17 16:12
  * @version: 1.0
  **/
-//@Component
-@Service
+@Component
+//@Service
 public class CostServiceImpl implements CostService {
 
     @Override

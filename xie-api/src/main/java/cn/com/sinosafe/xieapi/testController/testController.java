@@ -8,6 +8,8 @@
 package cn.com.sinosafe.xieapi.testController;
 
 
+import java.util.Arrays;
+
 /**
  * @description: 测试
  * @packageName: cn.com.sinosafe.xieapi.testController
@@ -176,5 +178,35 @@ public class testController {
             }
         }
         System.out.println(res);
+        //2, 6, 4, 8, 10, 9, 15
+        //2, 4, 6, 8,  9, 10,15
+//        int[] nums = {2, 6, 4, 8, 10, 9, 15};
+//        int l = nums.length,r = 0;
+//        for (int i=0; i<=nums.length;i++){
+//            for (int j=i+1; j<nums.length; j++){
+//                if(nums[i] > nums[j]){
+//                    r = Math.max(r,j);
+//                    l = Math.min(i,l);
+//                }
+//            }
+//        }
+//        System.out.println("r--->"+r+",l--->"+l);
+//        System.out.println(r-l<0?0:r-l+1);
+
+//        int[] nums = {2, 6, 4, 8, 10, 9, 15};
+//        int[] fnums = nums.clone();
+//        Arrays.sort(fnums);
+//        for (int fnum : fnums) {
+//            System.out.println(fnum);
+//        }
+//        int start = fnums.length, end = 0;
+//        for(int i = 0; i < fnums.length-1; i++){
+//            if(fnums[i] != nums[i]){
+//                start = Math.min(start,i);
+//                end = Math.max(i,end);
+//            }
+//        }
+//        System.out.println("start--->"+start+",end--->"+end);
+//        System.out.println(end-start<=0?0:end-start+1);
     }
 }
