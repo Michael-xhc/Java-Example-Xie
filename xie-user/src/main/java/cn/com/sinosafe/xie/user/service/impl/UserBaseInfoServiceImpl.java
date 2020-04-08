@@ -7,6 +7,7 @@
  */
 package cn.com.sinosafe.xie.user.service.impl;
 
+import cn.com.sinosafe.xie.user.domain.Node;
 import cn.com.sinosafe.xie.user.domain.UserBaseInfo;
 import cn.com.sinosafe.xie.user.mapper.UserBaseInfoMapper;
 import cn.com.sinosafe.xie.user.service.UserBaseInfoService;
@@ -29,6 +30,7 @@ import java.util.List;
 @Service
 public class UserBaseInfoServiceImpl implements UserBaseInfoService {
     private static final Logger logger = LoggerFactory.getLogger(UserBaseInfoServiceImpl.class);
+    private int sum = 0;
 
     @Autowired
     private UserBaseInfoMapper userBaseInfoMapper;
@@ -36,5 +38,16 @@ public class UserBaseInfoServiceImpl implements UserBaseInfoService {
     @Override
     public List<UserBaseInfo> selectUserBaseInfo(JSONObject req) throws Exception{
         return userBaseInfoMapper.selectUserBaseInfo(req);
+    }
+
+    @Override
+    public Node convertBST(Node root) throws Exception {
+            if (root != null) {
+                convertBST(root.right);
+                sum += root.data;
+                root.data = sum;
+                convertBST(root.left);
+            }
+            return root;
     }
 }
