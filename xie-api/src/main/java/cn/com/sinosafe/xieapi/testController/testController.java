@@ -11,7 +11,7 @@ package cn.com.sinosafe.xieapi.testController;
 import cn.com.sinosafe.xie.user.domain.Node;
 import cn.com.sinosafe.xie.user.service.MyBinarySearchTree;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @description: 测试
@@ -229,6 +229,51 @@ public class testController {
       * @Param
       * @return
       */
+//     public static void main(String[] args) {
+//     }
+
+     /**
+      * @Description //给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。
+      *                 找到所有在 [1, n] 范围之间没有出现在数组中的数字。
+      *                 您能在不使用额外空间且时间复杂度为O(n)的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。
+      * @Author xiehanchun
+      * @Date 2020/4/9 15:11
+      * @Param
+      * @return 
+      */
      public static void main(String[] args) {
+         int[] nums = {4,3,2,7,8,10,3,9,18,56};
+         List<Integer> list1 = new ArrayList<Integer>();
+         HashSet<Integer> objects = new HashSet<Integer>();
+         Hashtable<Integer,Integer> hashtable = new Hashtable<Integer, Integer>();
+         HashMap<Integer,Boolean> hashMap = new HashMap<Integer, Boolean>();
+         for (int i=0;i<=nums.length-1;i++){
+             hashMap.put(nums[i],true);
+             objects.add(nums[i]);
+             list1.add(nums[i]);
+             hashtable.put(i,nums[i]);
+         }
+         System.out.println(hashMap);
+         System.out.println(objects);
+         System.out.println(list1);
+         System.out.println(hashtable);
+         LinkedList<Integer> list = new LinkedList<Integer>();
+         List<Integer> integerList = new ArrayList<Integer>();
+         for(int i=1;i<=nums.length;i++){
+             if(!hashMap.containsKey(i)){
+                 list.add(i);
+//                 integerList.add(i);
+             }
+         }
+         for (int i=1;i<=nums.length;i++){
+             if(!hashtable.containsValue(i)){
+                 integerList.add(i);
+             }
+         }
+         System.out.println(list);
+         System.out.println("hh"+integerList);
+         for (Integer integer : list) {
+             System.out.print(integer+",");
+         }
      }
 }

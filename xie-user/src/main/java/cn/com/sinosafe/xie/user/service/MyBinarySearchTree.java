@@ -26,8 +26,7 @@ public class MyBinarySearchTree {
     public void addNode(int data){
         if(root == null){		//为空树
             root =new Node(data);
-        }
-        else{
+        }else{
             current = root;
             while(current != null){   //寻找叶子节点
                 if(data <= current.data){
@@ -37,8 +36,7 @@ public class MyBinarySearchTree {
                     }
                     current = current.left;
 
-                }
-                else{
+                }else{
                     if(current.right == null){
                         current.right = new Node(data);
                         break;
@@ -118,25 +116,25 @@ public class MyBinarySearchTree {
      */
 
 
-//    public static void main(String[] args) {
-//        MyBinarySearchTree my =new MyBinarySearchTree();
-//        //下列插入顺序可以打乱
-//        my.addNode(9);
-//        my.addNode(5);
-//        my.addNode(15);
-//        my.addNode(3);
-//        my.addNode(7);
-//        my.addNode(11);
-//        my.addNode(17);
-//        my.addNode(6);
-//        my.addNode(4);
-//        my.addNode(1);
-//        my.addNode(10);
-//        my.addNode(8);
-//        my.addNode(12);
-//        my.addNode(16);
-//        my.addNode(7);
-//        System.out.println("中序遍历：");
-//        my.inOrderPrintTree(my.root);
-//    }
+    public static void main(String[] args) {
+        MyBinarySearchTree my =new MyBinarySearchTree();
+        //下列插入顺序可以打乱
+        my.addNode(9);
+        my.addNode(5);
+        my.addNode(15);
+        my.addNode(3);
+        my.addNode(7);
+        my.addNode(11);
+        my.addNode(17);
+        my.addNode(6);
+        my.addNode(4);
+        my.addNode(1);
+        my.addNode(10);
+        my.addNode(8);
+        my.addNode(12);
+        my.addNode(16);
+        my.addNode(7);
+        System.out.println("中序遍历：");
+        my.inOrderPrintTree(my.current);
+    }
 }
