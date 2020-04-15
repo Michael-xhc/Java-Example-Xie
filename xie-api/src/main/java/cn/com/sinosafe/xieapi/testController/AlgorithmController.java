@@ -288,6 +288,6 @@ public class AlgorithmController {
       * @return
       */
      public static void main(String[] args) {
-
+          System.out.println();
      }
 }
