@@ -41,3 +41,10 @@ spring:
           starttls:
             enable: false
             required: false
+  rabbitmq:
+    virtual-host: Michael_xhc
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+#    publisher-confirms: true

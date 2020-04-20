@@ -48,3 +48,10 @@ spring:
     host: 127.0.0.1
     database: 0
     port: 6379
+  rabbitmq:
+    virtual-host: Michael_xhc
+    username: guest
+    password: guest
+    host: 127.0.0.1
+    port: 5672
+  #    publisher-confirms: true
