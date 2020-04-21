@@ -27,8 +27,9 @@ public class AngzkRun {
 //        String memberPrice = "会员福利￥66.80";
 //        String price = "直购价￥88.90";
 
-        GraphicsUtils.createPosterByRedTemplate(linkUrl, false, null, backgroundUrl, null,
-                null, null, null);
+        System.out.println(folderPath);
+//        GraphicsUtils.createPosterByRedTemplate(linkUrl, false, null, backgroundUrl, null,
+//                null, null, null);
     }
 
 }
