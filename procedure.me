@@ -1,0 +1,238 @@
+create or replace procedure PRO_LAON_SANXIAN_CLAIMED AS --要不用函数（）或者as
+
+  --该笔买断数据最大期次
+  maxTerm NUMBER(12);
+  --已还款本金
+  bjAmount number(12, 6);
+  --已还款利息
+  lxAmount number(12, 6);
+  --最后剩余本金金额
+  syBjAmount number(12, 6);
+  --剩余买断金额
+  syClaimAmount number(12, 6);
+  --还款日期
+  repay_date varchar2(10);
+  --剩余利息金额
+  sylxMount number(12, 6);
+  --该笔还款明细数据量
+  ps_note_count number(4);
+  --该笔借据是否买断
+  claim_count number(4);
+
+begin
+  maxTerm       := 0; -- := oracle 中的赋值
+  bjAmount      := 0;
+  lxAmount      := 0;
+  syBjAmount    := 0;
+  syClaimAmount := 0;
+  repay_date    := '0';
+  sylxMount     := '0';
+  ps_note_count := 0;
+  claim_count   := 0;
+  --查询买断对应期次数据
+  --删除买断期次后的数据
+  delete from acc_mtd_plan acc
+   where exists (select 1
+            from bat_repay_details a
+           where a.sources = 'SXYH'
+             and a.pay_source_type = '20'
+             and a.bill_no = acc.bill_no)
+     and acc.ps_perd_no > (select max(a.repay_times_no)
+                             from bat_repay_details a
+                            where a.sources = 'SXYH'
+                              and a.pay_source_type = '20'
+                              and a.bill_no = acc.bill_no
+                            group by acc.bill_no);
+
+   --声明游标 打开游标 处理数据 关闭游标
+  declare --声明变量
+    cursor OVER_DUE_LIST IS( --cursor 声明游标 OVER_DUE_LIST 查询结果赋值给OVER_DUE_LIST 当时对游标的理解是 用来遍历查询的数据
+      select acc.ps_perd_no,
+             acc.ps_due_dt,
+             acc.ps_prcp_amt,
+             acc.ps_norm_int_amt,
+             acc.ps_od_int_amt,
+             to_char(to_date(a.repay_date, 'yyyy-MM-dd'), 'yyyy-MM-dd') as repay_date,
+
+             acc.bill_no,
+             acc.business_date,
+             a.repay_cap,
+             a.repay_int,
+             a.repay_fine_int,
+             (a.repay_cap + a.repay_int + a.repay_fine_int) as repay_amount
+        from bat_repay_details a
+       inner join bat_acc_mtd_plan acc
+          on a.bill_no = acc.bill_no
+         and a.business_date = acc.business_date
+         and a.repay_times_no = acc.ps_perd_no
+       where a.sources = 'SXYH'
+         and a.bill_no = 'EDHT20190417214170002'
+         and a.pay_source_type = '20');
+    OVER_DUE_INFO OVER_DUE_LIST%ROWTYPE;
+    --业务逻辑处理
+  begin --
+    for OVER_DUE_INFO IN OVER_DUE_LIST LOOP --for遍历 不需要手动打开、关闭游标 for会自动做  OVER_DUE_LIST看做一个集合 OVER_DUE_INFO为一个对象
+
+      --查询改期买断数据是否存在
+      /* select count(*) into ps_note_count from acc_mtd_ps_note a where
+             a.bill_no  = OVER_DUE_INFO.bill_no
+             and a.ps_perd_no = OVER_DUE_INFO.ps_perd_no
+             and a.ps_real_dt  = OVER_DUE_INFO.repay_date;
+             if ps_note_count <>0 then
+               delete from acc_mtd_ps_note a
+                 where a.bill_no  = OVER_DUE_INFO.bill_no
+               and a.ps_perd_no = OVER_DUE_INFO.ps_perd_no
+               and a.ps_real_dt  = OVER_DUE_INFO.repay_date;
+             commit;
+             end if;
+
+        --插入还款明细
+        INSERT into acc_mtd_ps_note
+        (pk_id,
+         bank_serno,
+         bill_no,
+         ps_perd_no,
+         ps_real_dt,
+         ps_od_int_amt,
+         ps_comm_od_int,
+         ps_real_prcp_amt,
+         ps_real_int_amt,
+         setl_od_inc_taken,
+         setl_comm_od_int,
+         abstract,
+         update_way,
+         input_date,
+         input_date1,
+         input_id,
+         input_br_id)
+      values
+        (sys_guid(),
+         '',
+         OVER_DUE_INFO.bill_no,
+         OVER_DUE_INFO.ps_perd_no,
+         OVER_DUE_INFO.repay_date,
+         null,
+         null,
+         OVER_DUE_INFO.repay_cap,
+         OVER_DUE_INFO.repay_int,
+         0.00,
+         OVER_DUE_INFO.repay_fine_int,
+         '20',
+         '3',
+         to_char(sysdate, 'yyyy-mm-dd hh24:mi:ss'),
+          to_char(sysdate, 'yyyy-mm-dd'),
+         null,
+         null);*/
+      --更新还款计划
+      UPDATE acc_mtd_plan plans
+         SET plans.PS_REAL_PRCP_AMT  = OVER_DUE_INFO.ps_prcp_amt, --更新实还本金
+             plans.PS_PRCP_AMT       = OVER_DUE_INFO.ps_prcp_amt, --更新应还本金
+             plans.PS_NORM_INT_AMT   = OVER_DUE_INFO.ps_norm_int_amt, --更新应还利息
+             plans.PS_REAL_INT_AMT   = OVER_DUE_INFO.ps_norm_int_amt, --更新实还利息
+             plans.PS_INSTM_AMT      = OVER_DUE_INFO.ps_prcp_amt +
+                                       OVER_DUE_INFO.ps_norm_int_amt, --更新期供
+             plans.claimed_amount    = OVER_DUE_INFO.repay_cap +
+                                       OVER_DUE_INFO.repay_int +
+                                       OVER_DUE_INFO.repay_fine_int,
+             plans.ps_real_dt        = OVER_DUE_INFO.repay_date, --更新实还日期
+             plans.ps_due_dt         = OVER_DUE_INFO.ps_due_dt, --更新应还时间
+             plans.ps_od_int_amt     = OVER_DUE_INFO.ps_od_int_amt, --更新应还罚息
+             plans.SETL_OD_INC_TAKEN = OVER_DUE_INFO.ps_od_int_amt, --更新实还罚息
+             plans.repay_flag        = '21' --状态变为超期
+       WHERE plans.bill_no = OVER_DUE_INFO.bill_no
+         and plans.ps_perd_no = OVER_DUE_INFO.ps_perd_no;
+      commit;
+
+    end loop;
+  end;
+  /**
+    查询三湘银行提前结清操作
+  **/
+  declare
+    cursor SX_REPAY_FORWARD_LIST IS(
+      select temp.*
+        from (select sum(ps_real_prcp_amt) as reapy_amount,
+                     max(aa.ps_perd_no) as maxTerm,
+                     aa.bill_no,
+                     max(aa.ps_real_dt) as ps_real_dt
+                from acc_mtd_ps_note aa
+               where 1 = 1
+                 and aa.bill_no = 'EDHT20190731294210001'
+                 and not exists (
+
+                      select 1
+                        from bat_repay_details detail
+                       where detail.sources = 'SXYH'
+                         and detail.pay_source_type = '20'
+                         and aa.bill_no = detail.bill_no)
+               group by aa.bill_no) temp
+       inner join acc_loan acc
+          on temp.bill_no = acc.bill_no
+       where acc.loan_amount = temp.reapy_amount
+         and acc.partner_no = 'PRJ20170930049711');
+    SX_REPAY_FORWARD_info SX_REPAY_FORWARD_LIST%ROWTYPE;
+
+  begin
+    for SX_REPAY_FORWARD_info in SX_REPAY_FORWARD_LIST loop
+      --删除多余还款计划
+      delete from acc_mtd_plan a
+       where a.bill_no = SX_REPAY_FORWARD_info.bill_no
+         and a.ps_perd_no > SX_REPAY_FORWARD_info.maxTerm;
+      --更新当前期次应还日期
+      update acc_mtd_plan a
+         set a.ps_due_dt = SX_REPAY_FORWARD_info.ps_real_dt,
+             (a.PS_PRCP_AMT, a.PS_NORM_INT_AMT, a.PS_OD_INT_AMT) =
+             (select detail.repay_cap, detail.repay_int, detail.repay_fine_int
+                from bat_repay_details detail
+               where detail.bill_no = SX_REPAY_FORWARD_info.bill_no and detail.repay_times_no =SX_REPAY_FORWARD_info.maxTerm)
+       where a.bill_no = SX_REPAY_FORWARD_info.bill_no
+         and a.ps_perd_no = SX_REPAY_FORWARD_info.maxTerm;
+      commit;
+
+      update acc_mtd_plan accp
+			 set accp.repay_flag = (
+			  select
+				 case
+					when (acc.ps_real_prcp_amt + acc.ps_real_int_amt) >= (acc.ps_prcp_amt + acc.ps_norm_int_amt) then
+						case
+							   when hasClaimRepay(bill_no,ps_perd_no)  = 'yes' then '21'
+							   when acc.ps_real_dt <= nvl(acc.ps_due_dt,to_char(sysdate,'yyyy-mm-dd')) then '10'
+							   when acc.ps_real_dt > nvl(acc.ps_due_dt,to_char(sysdate,'yyyy-mm-dd')) then '21'
+						end
+					else
+						case
+								  when ps_real_dt is null and nvl(acc.ps_due_dt,to_char(sysdate,'yyyy-mm-dd')) >= to_char(sysdate,'yyyy-mm-dd') then '00'
+						 when ps_real_dt is not null and nvl(acc.ps_due_dt,to_char(sysdate,'yyyy-mm-dd')) >= to_char(sysdate,'yyyy-mm-dd') then '10'
+								  when nvl(acc.ps_due_dt,to_char(sysdate,'yyyy-mm-dd')) < to_char(sysdate,'yyyy-mm-dd') then '20'
+						end
+				  end as repay_flag
+			  from acc_mtd_plan acc
+			  where
+			   acc.bill_no=accp.bill_no
+						and acc.ps_perd_no = accp.ps_perd_no
+						and acc.bill_no  = SX_REPAY_FORWARD_info.bill_no
+				  );
+          commit;
+    end loop;
+
+  end;
+  --更新三湘银行台账状态
+  update acc_loan acc
+     set acc.account_status = decode(getNearestTermStatus(bill_no),
+                                     '00',
+                                     '1',
+                                     '20',
+                                     '4',
+                                     '21',
+                                     '5',
+                                     '1')
+   where acc.partner_no = 'PRJ20170930049711';
+  commit;
+  --更新贷款余额
+  update acc_loan acc
+     set acc.account_status = '9'
+   where acc.loan_balance <= 0
+     and acc.partner_no = 'PRJ20170930049711';
+  commit;
+
+end PRO_LAON_SANXIAN_CLAIMED;
