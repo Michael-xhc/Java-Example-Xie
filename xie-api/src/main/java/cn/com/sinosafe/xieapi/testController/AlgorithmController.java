@@ -10,6 +10,7 @@ package cn.com.sinosafe.xieapi.testController;
 
 import cn.com.sinosafe.xie.user.domain.Node;
 import cn.com.sinosafe.xie.user.service.MyBinarySearchTree;
+import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
@@ -311,7 +312,27 @@ public class AlgorithmController {
       * @return
       */
      public static void main(String[] args) {
-         int i = Integer.bitCount(4 ^ 1);
-         System.out.println(i);
+         String [] str = {"1","1","1","1","2","2","2","3"};
+         HashMap<String,String> hashMap = new HashMap<>();
+         HashSet<String> hashSet = new HashSet<>();
+         for(int i=0;i<str.length;i++){
+            hashMap.put(String.valueOf(i),str[i]);
+            hashSet.add(str[i]);
+         }
+
+         Iterator<Map.Entry<String, String>> iterator = hashMap.entrySet().iterator();
+         while (iterator.hasNext()){
+             Map.Entry<String, String> next = iterator.next();
+             System.out.println("hashMap:"+next.getValue());
+         }
+
+         Iterator<String> iterator1 = hashSet.iterator();
+         while (iterator1.hasNext()){
+             String next = iterator1.next();
+             System.out.println("hashSet:"+next);
+         }
+
+         HashSet<String> set = new HashSet<>();
+
      }
 }
