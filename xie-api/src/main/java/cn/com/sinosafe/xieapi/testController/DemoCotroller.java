@@ -11,8 +11,7 @@ import cn.com.sinosafe.xiecommon.utils.ParamUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.util.*;
 
 /**
  * @description: 测试类
@@ -44,8 +43,40 @@ public static String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
 //    }
 
     public static void main(String[] args) {
-        String str = null;
-        ParamUtils.notEmpty(str,"name");
+//        String str = null;
+//        ParamUtils.notEmpty(str,"name");
+
+        List<String> list = new ArrayList<String>();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
+        list.add("5");
+        list.add("6");
+        list.add("7");
+        list.add("8");
+
+        int listSize=list.size();
+        int toIndex=2;
+        //用map存起来新的分组后数据
+        Map<String, List<String>> map = new HashMap();
+        int keyToken = 0;
+        for(int i = 0;i<listSize;i+=2) {
+            //作用为toIndex最后没有200条数据则剩余几条newList中就装几条
+            if(i+2>listSize){
+                toIndex=listSize-i;
+            }
+            List<String> newList = list.subList(i,i+toIndex);
+            map.put("keyName"+keyToken, newList);
+            keyToken++;
+        }
+
+        for (List<String> value : map.values()) {
+            System.out.println(value);
+            for (String s : value) {
+                System.out.println(s);
+            }
+        }
     }
 
 }
