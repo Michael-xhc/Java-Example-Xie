@@ -311,28 +311,47 @@ public class AlgorithmController {
       * @Param
       * @return
       */
+//     public static void main(String[] args) {
+//         String [] str = {"1","1","1","1","2","2","2","3"};
+//         HashMap<String,String> hashMap = new HashMap<>();
+//         HashSet<String> hashSet = new HashSet<>();
+//         for(int i=0;i<str.length;i++){
+//            hashMap.put(String.valueOf(i),str[i]);
+//            hashSet.add(str[i]);
+//         }
+//
+//         Iterator<Map.Entry<String, String>> iterator = hashMap.entrySet().iterator();
+//         while (iterator.hasNext()){
+//             Map.Entry<String, String> next = iterator.next();
+//             System.out.println("hashMap:"+next.getValue());
+//         }
+//
+//         Iterator<String> iterator1 = hashSet.iterator();
+//         while (iterator1.hasNext()){
+//             String next = iterator1.next();
+//             System.out.println("hashSet:"+next);
+//         }
+//
+//         HashSet<String> set = new HashSet<>();
+//
+//     }
+     
+     /**
+      * @Description //给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
+      * 有效字符串需满足：
+      * 左括号必须用相同类型的右括号闭合。
+      * 左括号必须以正确的顺序闭合。
+      * 注意空字符串可被认为是有效字符串。
+      * @Author xiehanchun
+      * @Date 2020/5/6 18:08
+      * @Param 
+      * @return 
+      */
      public static void main(String[] args) {
-         String [] str = {"1","1","1","1","2","2","2","3"};
-         HashMap<String,String> hashMap = new HashMap<>();
-         HashSet<String> hashSet = new HashSet<>();
-         for(int i=0;i<str.length;i++){
-            hashMap.put(String.valueOf(i),str[i]);
-            hashSet.add(str[i]);
+         String msg = "{[]} ";
+         String s = msg.trim();
+         for(int i = 0; i<s.length(); i++){
+             char c = s.charAt(i);
          }
-
-         Iterator<Map.Entry<String, String>> iterator = hashMap.entrySet().iterator();
-         while (iterator.hasNext()){
-             Map.Entry<String, String> next = iterator.next();
-             System.out.println("hashMap:"+next.getValue());
-         }
-
-         Iterator<String> iterator1 = hashSet.iterator();
-         while (iterator1.hasNext()){
-             String next = iterator1.next();
-             System.out.println("hashSet:"+next);
-         }
-
-         HashSet<String> set = new HashSet<>();
-
      }
 }
