@@ -8,10 +8,14 @@
 package cn.com.sinosafe.xieapi.testController;
 
 import cn.com.sinosafe.xiecommon.utils.ParamUtils;
+import com.alibaba.fastjson.JSONArray;
+import org.apache.commons.lang.StringUtils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @description: 测试类
@@ -34,6 +38,7 @@ public class DemoCotroller {
 //    }
 public static String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
 
+private static Pattern NUMBER_PATTERN= Pattern.compile("【.+?】");
 
 //    public static void main(String[] args) {
 //        Calendar calendar = Calendar.getInstance();
@@ -46,37 +51,50 @@ public static String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
 //        String str = null;
 //        ParamUtils.notEmpty(str,"name");
 
-        List<String> list = new ArrayList<String>();
-        list.add("1");
-        list.add("2");
-        list.add("3");
-        list.add("4");
-        list.add("5");
-        list.add("6");
-        list.add("7");
-        list.add("8");
+//        List<String> list = new ArrayList<String>();
+//        list.add("1");
+//        list.add("2");
+//        list.add("3");
+//        list.add("4");
+//        list.add("5");
+//        list.add("6");
+//        list.add("7");
+//        list.add("8");
+//
+//        int listSize=list.size();
+//        int toIndex=2;
+//        //用map存起来新的分组后数据
+//        Map<String, List<String>> map = new HashMap();
+//        int keyToken = 0;
+//        for(int i = 0;i<listSize;i+=2) {
+//            //作用为toIndex最后没有200条数据则剩余几条newList中就装几条
+//            if(i+2>listSize){
+//                toIndex=listSize-i;
+//            }
+//            List<String> newList = list.subList(i,i+toIndex);
+//            map.put("keyName"+keyToken, newList);
+//            keyToken++;
+//        }
+//
+//        for (List<String> value : map.values()) {
+//            System.out.println(value);
+//            for (String s : value) {
+//                System.out.println(s);
+//            }
+//        }
 
-        int listSize=list.size();
-        int toIndex=2;
-        //用map存起来新的分组后数据
-        Map<String, List<String>> map = new HashMap();
-        int keyToken = 0;
-        for(int i = 0;i<listSize;i+=2) {
-            //作用为toIndex最后没有200条数据则剩余几条newList中就装几条
-            if(i+2>listSize){
-                toIndex=listSize-i;
-            }
-            List<String> newList = list.subList(i,i+toIndex);
-            map.put("keyName"+keyToken, newList);
-            keyToken++;
-        }
-
-        for (List<String> value : map.values()) {
-            System.out.println(value);
-            for (String s : value) {
-                System.out.println(s);
-            }
-        }
+//        String str = "[\"【PRE0008】申请人不符合我司审批政策！\"]";
+//        JSONArray errMsgs = com.alibaba.fastjson.JSONArray.parseArray(str);
+//        String string = errMsgs.getString(0);
+//        System.out.println(string.toString());
+//        Matcher m = NUMBER_PATTERN.matcher("【AA】XXX,【BB】XXX");
+//
+//        while (m.find()) {
+//
+//            System.out.println(m.group().replaceAll("[【】]", ""));
+//        }
+        String str = "PRE0008";
+        System.out.println(str.substring(0,2));
     }
 
 }
