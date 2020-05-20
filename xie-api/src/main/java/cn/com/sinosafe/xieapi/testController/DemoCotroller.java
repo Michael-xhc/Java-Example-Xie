@@ -47,7 +47,7 @@ private static Pattern NUMBER_PATTERN= Pattern.compile("【.+?】");
 //        System.out.println(sdf.format(calendar.getTime()));
 //    }
 
-    public static void main(String[] args) {
+//    public static void main(String[] args) {
 //        String str = null;
 //        ParamUtils.notEmpty(str,"name");
 
@@ -83,18 +83,61 @@ private static Pattern NUMBER_PATTERN= Pattern.compile("【.+?】");
 //            }
 //        }
 
-//        String str = "[\"【PRE0008】申请人不符合我司审批政策！\"]";
+//        String str = "[]";
 //        JSONArray errMsgs = com.alibaba.fastjson.JSONArray.parseArray(str);
-//        String string = errMsgs.getString(0);
-//        System.out.println(string.toString());
-//        Matcher m = NUMBER_PATTERN.matcher("【AA】XXX,【BB】XXX");
+//        if(errMsgs.size()>0) {
+//            String string = errMsgs.getString(0);
+//            System.out.println(string.toString());
+//            Matcher m = NUMBER_PATTERN.matcher("【AA】XXX,【BB】XXX");
 //
-//        while (m.find()) {
-//
-//            System.out.println(m.group().replaceAll("[【】]", ""));
+//            while (m.find()) {
+//                System.out.println(m.group().replaceAll("[【】]", ""));
+//            }
+//        }else{
+//            System.out.println("ssdfhf");
 //        }
-        String str = "PRE0008";
-        System.out.println(str.substring(0,2));
+//    }
+
+    public static void main(String[] args) {
+        /*String s  = "([)]";
+        int left1 = 0;
+        int left2 = 0;
+        int left3 = 0;
+        for(int i = 0; i<s.length();i++){
+            char c = s.charAt(i);
+            String str = String.valueOf(c);
+            if("(".equals(str)){
+                ++left1;
+            }else if(")".equals(str)){
+                if(left1>0){
+                    --left1;
+                }else{
+                    System.out.println("表达式错误");
+                }
+            }else if("[".equals(str)){
+                ++left2;
+            }else if("]".equals(str)){
+                if(left2>0){
+                    --left2;
+                }else{
+                    System.out.println("表达式错误");
+                }
+            }else if("{".equals(str)){
+                ++left3;
+            }else if("}".equals(str)){
+                if(left3>0){
+                    --left3;
+                }else{
+                    System.out.println("表达式错误");
+                }
+            }
+        }
+        if(left1==0 && left2==0 && left3==0){
+            System.out.println("表达式正确");
+        }else{
+            System.out.println("表达式错误");
+        }*/
+
     }
 
 }

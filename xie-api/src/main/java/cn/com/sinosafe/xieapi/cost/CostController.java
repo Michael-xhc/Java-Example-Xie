@@ -10,10 +10,14 @@ package cn.com.sinosafe.xieapi.cost;
 import cn.com.sinosafe.xie.cost.service.CostService;
 import cn.com.sinosafe.xieapi.designpatterns.BuilderPattern;
 import cn.com.sinosafe.xiecommon.annotation.Authentication;
+import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.validation.Valid;
+import java.util.HashMap;
 
 /**
  * @description: 费用
@@ -39,7 +43,10 @@ public class CostController {
     public static void main(String[] args) {
 //        Builder  builder = new Builder();
 //        builder.setName("xiehanchun").setMaxIdle(30).setMinIdle(2).setMaxTotal(10).build();
-        BuilderPattern build = new BuilderPattern.Builder().setName("xiehanchun").setMaxIdle(9).setMinIdle(20).setMaxTotal(10).build();
-        System.out.println(build.getName());
+//        BuilderPattern build = new BuilderPattern.Builder().setName("xiehanchun").setMaxIdle(9).setMinIdle(20).setMaxTotal(10).build();
+//        System.out.println(build.getName());
+        ValidParentheses validParentheses = new ValidParentheses();
+        boolean b = validParentheses.isValid("([)]");
+        System.out.println(b);
     }
 }
