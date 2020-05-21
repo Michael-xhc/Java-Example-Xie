@@ -347,11 +347,31 @@ public class AlgorithmController {
       * @Param 
       * @return 
       */
+//     public static void main(String[] args) {
+//         String msg = "{[]} ";
+//         String s = msg.trim();
+//         for(int i = 0; i<s.length(); i++){
+//             char c = s.charAt(i);
+//         }
+//     }
+
      public static void main(String[] args) {
-         String msg = "{[]} ";
-         String s = msg.trim();
-         for(int i = 0; i<s.length(); i++){
-             char c = s.charAt(i);
+         int[] nums = {2,4,101,24,28,40,90,202,33,77,45,88,11,7,15};
+         int target = 9;
+//         System.out.println(nums.length);
+         /*for(int i=0; i<nums.length-1; i++){
+             for(int j=i+1; j<nums.length-1; j++){
+                if(nums[i]+nums[j]==target){
+                    System.out.println("下标："+String.valueOf(i)+"-"+String.valueOf(j));
+                }
+             }
+         }*/
+
+         HashMap<Integer,Integer> map = new HashMap<>();
+         for(int i=0; i<nums.length-1;i++){
+            int b = target - nums[i];
+             if(map.containsKey(b)) System.out.println(String.valueOf(map.get(b))+"-"+String.valueOf(i));
+            map.put(nums[i],i);
          }
      }
 }
