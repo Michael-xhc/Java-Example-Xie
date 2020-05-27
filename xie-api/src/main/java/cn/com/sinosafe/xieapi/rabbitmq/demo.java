@@ -1,27 +1,19 @@
-package cn.com.sinosafe.xieapi.rabbitmq; /**
- * projectName: pig
- * fileName: demo.java
- * packageName: com.pig4cloud.pig.common.log.util
- * date: 2019-09-09 14:35
- * copyright(c) 2019-  华安保险公司
- */
-/*package org.javaboy.mailserver.receiver;
+package cn.com.sinosafe.xieapi.rabbitmq;
 
 import lombok.Data;
-import org.aspectj.weaver.ast.Test;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-*//**
+/**
  * @version: v1.0
  * @author: xiehanchun
  * @className: demo
  * @packageName: com.pig4cloud.pig.common.log.util
  * @description: 实体类
  * @data: 2019-09-09 14:35
- **//*
+ **/
 public class demo {
 	public static void main(String[] args) {
 		List<DataBean> totalStocks = new ArrayList<>();
@@ -85,5 +77,5 @@ class DataBean {
 	private int type;
 	private int deptId;
 	private int num;
-}*/
+}
 
