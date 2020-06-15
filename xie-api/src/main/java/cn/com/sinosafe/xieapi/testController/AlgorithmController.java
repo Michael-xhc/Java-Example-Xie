@@ -128,7 +128,7 @@ public class AlgorithmController {
     }*/
     
      /**
-      * @Description //最短无序连续子数组
+      * @Description // 581 最短无序连续子数组
       * @Author xiehanchun
       * @Date 2020/3/19 17:29
       * @Param
@@ -214,8 +214,9 @@ public class AlgorithmController {
 //        System.out.println(end-start<=0?0:end-start+1);
 //    }
      /**
-      * @Description //给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，
-      *                  使得每个节点的值是原来的节点值加上所有大于它的节点值之和。
+      * @Description // 538. 把二叉搜索树转换为累加树
+      *               给定一个二叉搜索树（Binary Search Tree），把它转换成为累加树（Greater Tree)，
+      *               使得每个节点的值是原来的节点值加上所有大于它的节点值之和。
       *               输入: 原始二叉搜索树:
       *               5
       *             /   \
@@ -234,7 +235,8 @@ public class AlgorithmController {
 //     }
 
      /**
-      * @Description //给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。
+      * @Description 448. 找到所有数组中消失的数字
+      *                 //给定一个范围在  1 ≤ a[i] ≤ n ( n = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。
       *                 找到所有在 [1, n] 范围之间现在没有出数组中的数字。
       *                 您能在不使用额外空间且时间复杂度为O(n)的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。
       * @Author xiehanchun
@@ -293,7 +295,8 @@ public class AlgorithmController {
 //     }
 
      /**
-      * @Description //两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
+      * @Description //461 汉明距离
+      *                 两个整数之间的汉明距离指的是这两个数字对应二进制位不同的位置的数目。
       *                 给出两个整数 x 和 y，计算它们之间的汉明距离。
                       * 注意：
                       * 0 ≤ x, y < 2^31.
@@ -337,11 +340,7 @@ public class AlgorithmController {
 //     }
      
      /**
-      * @Description //给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串，判断字符串是否有效。
-      * 有效字符串需满足：
-      * 左括号必须用相同类型的右括号闭合。
-      * 左括号必须以正确的顺序闭合。
-      * 注意空字符串可被认为是有效字符串。
+      * @Description 20 有效的括号
       * @Author xiehanchun
       * @Date 2020/5/6 18:08
       * @Param 
@@ -355,23 +354,50 @@ public class AlgorithmController {
 //         }
 //     }
 
-     public static void main(String[] args) {
+/*     public static void main(String[] args) {
          int[] nums = {2,4,101,24,28,40,90,202,33,77,45,88,11,7,15};
          int target = 9;
 //         System.out.println(nums.length);
-         /*for(int i=0; i<nums.length-1; i++){
+         for(int i=0; i<nums.length-1; i++){
              for(int j=i+1; j<nums.length-1; j++){
                 if(nums[i]+nums[j]==target){
                     System.out.println("下标："+String.valueOf(i)+"-"+String.valueOf(j));
                 }
              }
-         }*/
+         }
 
          HashMap<Integer,Integer> map = new HashMap<>();
          for(int i=0; i<nums.length-1;i++){
             int b = target - nums[i];
              if(map.containsKey(b)) System.out.println(String.valueOf(map.get(b))+"-"+String.valueOf(i));
             map.put(nums[i],i);
+         }
+     }*/
+
+     /**
+      * @Description //136 只出现一次的数字
+      * @Author xiehanchun
+      * @Date 2020/6/3 14:26
+      * @Param
+      * @return
+      */
+     public static void main(String[] args) {
+         int[] num = new int[]{2,2,1};
+         for (int i = 0;i < num.length;i++) {
+             outer:
+             for(int j=0;j < num.length;j++){
+                 if(i != j) {
+                     if (num[i] == num[j]) {
+                         break outer;
+                     }
+                     if(num[i] != num[j]){
+                         if(j==num.length-1){
+                             System.out.println(num[i]);
+                             return;
+                         }
+                     }
+                 }
+             }
          }
      }
 }
