@@ -375,14 +375,11 @@ public class AlgorithmController {
      }*/
 
      /**
-      * @Description //136 只出现一次的数字
-      * @Author xiehanchun
-      * @Date 2020/6/3 14:26
-      * @Param
-      * @return
+      * //136 只出现一次的数字(用异或)   注：异或运算 同或运算
+      * Created by xiehanchun on 2020/7/10
       */
-     public static void main(String[] args) {
-         int[] num = new int[]{2,2,1};
+    /* public static void main(String[] args) {
+         int[] num = new int[]{2,2,1,3,3,4,4,5,5};
          for (int i = 0;i < num.length;i++) {
              outer:
              for(int j=0;j < num.length;j++){
@@ -399,5 +396,51 @@ public class AlgorithmController {
                  }
              }
          }
+         HashMap<Integer, Integer> map = new HashMap<>();
+         for(int i = 0; i < num.length; i++){
+             if(map.containsKey(num[i])){
+                map.remove(num[i]);
+             }else{
+                 map.put(num[i],num[i]);
+             }
+         }
+         for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+             System.out.println(entry.getKey());
+         }
+
+         //异或0^0=0 0^1=1 1^1=0  与运算 相同对象为1 0与任何对象为0 或运算0|0=0 0|对象=对象 有1为1
+         Integer single = 0;
+         for(int i = 0; i < num.length; i++){
+            single ^= num[i];
+         }
+         System.out.println(single);
+     }*/
+
+    /**
+      * @Author xiehanchun
+      * @Description // 79. 单词搜索
+      * @Date 2020/7/13
+      * @Param
+      * @return
+     **/
+     private static boolean[][] b;
+     public static void main(String[] args) {
+         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+//         char[][] board ={{'A','B'},{'S','F'}};
+         String word = "ABCCAD";
+         WordSerSolution w = new WordSerSolution();
+         boolean exist = w.exist(board, word);
+         System.out.println(exist);
+//         ABCE
+//         SFCS
+//         ADEE
+
+//         int i = 4;
+//         int j = 5;
+//         b = new boolean[i][j];
+//         b[1][0] = false;
+//         if(!b[0][0]){
+//             System.out.println("111");
+//         }
      }
 }
