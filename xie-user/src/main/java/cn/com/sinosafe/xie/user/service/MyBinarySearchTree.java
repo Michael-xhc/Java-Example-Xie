@@ -1,6 +1,6 @@
 /**
  * projectName: Haxb-Outsource-Xie
- * packageName: cn.com.sinosafe.xieapi.testController
+ * packageName: cn.com.sinosafe.xieapi.testcontroller
  * fileName: MyBinarySearchTree.java
  * date: 2020-04-08 14:26
  * copyright(c) 2019-  华安保险公司
@@ -13,7 +13,7 @@ import java.util.LinkedList;
 
 /**
  * @description: 二叉树搜索树
- * @packageName: cn.com.sinosafe.xieapi.testController
+ * @packageName: cn.com.sinosafe.xieapi.testcontroller
  * @className: MyBinarySearchTree
  * @author: xiehanchun
  * @data: 2020-04-08 14:26

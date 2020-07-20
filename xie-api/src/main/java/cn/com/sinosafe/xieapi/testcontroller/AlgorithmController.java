@@ -1,23 +1,26 @@
 /**
  * projectName: Haxb-Outsource-Xie
- * packageName: cn.com.sinosafe.xieapi.testController
- * fileName: testController.java
+ * packageName: cn.com.sinosafe.xieapi.testcontroller
+ * fileName: testcontroller.java
  * date: 2020-03-13 16:34
  * copyright(c) 2019-  华安保险公司
  */
-package cn.com.sinosafe.xieapi.testController;
+package cn.com.sinosafe.xieapi.testcontroller;
 
 
 import cn.com.sinosafe.xie.user.domain.Node;
 import cn.com.sinosafe.xie.user.service.MyBinarySearchTree;
+import cn.com.sinosafe.xieapi.designpatterns.Demo;
+import cn.com.sinosafe.xieapi.designpatterns.SecurityTransporter;
+import cn.com.sinosafe.xieapi.designpatterns.Transporter;
 import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
 /**
  * @description: 测试
- * @packageName: cn.com.sinosafe.xieapi.testController
- * @className: testController
+ * @packageName: cn.com.sinosafe.xieapi.testcontroller
+ * @className: testcontroller
  * @author: xiehanchun
  * @data: 2020-03-13 16:34
  * @version: v1.0
@@ -423,14 +426,13 @@ public class AlgorithmController {
       * @Param
       * @return
      **/
-     private static boolean[][] b;
      public static void main(String[] args) {
-         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+//         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
 //         char[][] board ={{'A','B'},{'S','F'}};
-         String word = "ABCCAD";
-         WordSerSolution w = new WordSerSolution();
-         boolean exist = w.exist(board, word);
-         System.out.println(exist);
+//         String word = "ABCCAD";
+//         cn.com.sinosafe.xieapi.testcontroller.WordSerSolution w = new cn.com.sinosafe.xieapi.testcontroller.WordSerSolution();
+//         boolean exist = w.exist(board, word);
+//         System.out.println(exist);
 //         ABCE
 //         SFCS
 //         ADEE
@@ -442,5 +444,8 @@ public class AlgorithmController {
 //         if(!b[0][0]){
 //             System.out.println("111");
 //         }
+         Demo demo = new Demo();
+         demo.demoFunction(new SecurityTransporter("11","111","1111"));
+         demo.demoFunction(new Transporter("11"));
      }
 }

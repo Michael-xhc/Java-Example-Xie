@@ -1,11 +1,11 @@
 /**
  * projectName: Haxb-Outsource-Xie
- * packageName: cn.com.sinosafe.xieapi.testController
+ * packageName: cn.com.sinosafe.xieapi.testcontroller
  * fileName: DemoCotroller.java
  * date: 2020-03-24 14:02
  * copyright(c) 2019-  华安保险公司
  */
-package cn.com.sinosafe.xieapi.testController;
+package cn.com.sinosafe.xieapi.testcontroller;
 
 import cn.com.sinosafe.xiecommon.utils.ParamUtils;
 import com.alibaba.fastjson.JSONArray;
@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 
 /**
  * @description: 测试类
- * @packageName: cn.com.sinosafe.xieapi.testController
+ * @packageName: cn.com.sinosafe.xieapi.testcontroller
  * @className: DemoCotroller
  * @author: xiehanchun
  * @data: 2020-03-24 14:02

@@ -1,18 +1,18 @@
 /**
  * projectName: Haxb-Outsource-Xie
- * packageName: cn.com.sinosafe.xieapi.testController
+ * packageName: cn.com.sinosafe.xieapi.testcontroller
  * fileName: FileTest.java
  * date: 2020-03-26 16:18
  * copyright(c) 2019-  华安保险公司
  */
-package cn.com.sinosafe.xieapi.testController;
+package cn.com.sinosafe.xieapi.testcontroller;
 
 import java.io.File;
 import java.io.IOException;
 
 /**
  * @description: 文件测试
- * @packageName: cn.com.sinosafe.xieapi.testController
+ * @packageName: cn.com.sinosafe.xieapi.testcontroller
  * @className: FileTest
  * @author: xiehanchun
  * @data: 2020-03-26 16:18

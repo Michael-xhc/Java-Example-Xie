@@ -1,4 +1,4 @@
-package cn.com.sinosafe.xieapi.testController;
+package cn.com.sinosafe.xieapi.testcontroller;
 
 
 /**

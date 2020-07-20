@@ -1,4 +1,4 @@
-package cn.com.sinosafe.xieapi.testController;
+package cn.com.sinosafe.xieapi.testcontroller;
 
 /**
  * Created by xiehanchun on 2020/7/13
