@@ -13,8 +13,12 @@ import cn.com.sinosafe.xie.user.service.MyBinarySearchTree;
 import cn.com.sinosafe.xieapi.designpatterns.Demo;
 import cn.com.sinosafe.xieapi.designpatterns.SecurityTransporter;
 import cn.com.sinosafe.xieapi.designpatterns.Transporter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.CollectionUtils;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -25,6 +29,7 @@ import java.util.*;
  * @data: 2020-03-13 16:34
  * @version: v1.0
  **/
+@Slf4j
 public class AlgorithmController {
 
     /*
@@ -444,8 +449,5 @@ public class AlgorithmController {
 //         if(!b[0][0]){
 //             System.out.println("111");
 //         }
-         Demo demo = new Demo();
-         demo.demoFunction(new SecurityTransporter("11","111","1111"));
-         demo.demoFunction(new Transporter("11"));
      }
 }
