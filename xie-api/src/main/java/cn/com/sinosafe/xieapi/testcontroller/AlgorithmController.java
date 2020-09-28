@@ -8,18 +8,7 @@
 package cn.com.sinosafe.xieapi.testcontroller;
 
 
-import cn.com.sinosafe.xie.user.domain.Node;
-import cn.com.sinosafe.xie.user.service.MyBinarySearchTree;
-import cn.com.sinosafe.xieapi.designpatterns.Demo;
-import cn.com.sinosafe.xieapi.designpatterns.SecurityTransporter;
-import cn.com.sinosafe.xieapi.designpatterns.Transporter;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.CollectionUtils;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
 /**
  * @description: 测试
@@ -432,9 +421,9 @@ public class AlgorithmController {
       * @return
      **/
      public static void main(String[] args) {
-//         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
 //         char[][] board ={{'A','B'},{'S','F'}};
-//         String word = "ABCCAD";
+//         String word = "ABCC";
 //         cn.com.sinosafe.xieapi.testcontroller.WordSerSolution w = new cn.com.sinosafe.xieapi.testcontroller.WordSerSolution();
 //         boolean exist = w.exist(board, word);
 //         System.out.println(exist);
@@ -449,5 +438,12 @@ public class AlgorithmController {
 //         if(!b[0][0]){
 //             System.out.println("111");
 //         }
+//         TestClass testClass = new TestClass();
+//         testClass.sortAg();
+
+           ByteBounce bounce = new ByteBounce();
+
      }
+
+
 }
