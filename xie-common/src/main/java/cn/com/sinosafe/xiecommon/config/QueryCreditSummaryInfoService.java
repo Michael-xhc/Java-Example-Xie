@@ -1,3 +1,4 @@
+/*
 package cn.com.sinosafe.xiecommon.config;
 
 import cn.com.sinosafe.xiecommon.utils.StringUtils;
@@ -19,10 +20,12 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
+*/
 /**
  * 查询个人征信数据汇总
  * Created by xiehanchun on 2020/7/22
- */
+ *//*
+
 @Service
 @Slf4j
 public class QueryCreditSummaryInfoService {
@@ -330,19 +333,29 @@ public class QueryCreditSummaryInfoService {
             if(!ObjectUtils.isEmpty(creditInfo.getQueryDetail())){
                 //近1个月
                 int queryIn1Month = queryInMonth(creditInfo.getQueryDetail(), 1);
-                /*int  queryIn1Month = CreditQueryUtils.getQueryCount(creditInfo, 1);*/
+                */
+/*int  queryIn1Month = CreditQueryUtils.getQueryCount(creditInfo, 1);*//*
+
                 //近3个月
                 int queryIn3Month = queryInMonth(creditInfo.getQueryDetail(), 3);
-                /*int  queryIn3Month = CreditQueryUtils.getQueryCount(creditInfo, 3);*/
+                */
+/*int  queryIn3Month = CreditQueryUtils.getQueryCount(creditInfo, 3);*//*
+
                 //近半年
                 int queryIn6Month = queryInMonth(creditInfo.getQueryDetail(), 6);
-                /*int  queryIn6Month = CreditQueryUtils.getQueryCount(creditInfo, 6);*/
+                */
+/*int  queryIn6Month = CreditQueryUtils.getQueryCount(creditInfo, 6);*//*
+
                 //近1年
                 int queryIn12Month = queryInMonth(creditInfo.getQueryDetail(), 12);
-                /*int  queryIn12Month = CreditQueryUtils.getQueryCount(creditInfo, 12);*/
+                */
+/*int  queryIn12Month = CreditQueryUtils.getQueryCount(creditInfo, 12);*//*
+
                 //近24年
                 int queryIn24Month = queryInMonth(creditInfo.getQueryDetail(), 24);
-                /*int  queryIn24Month = CreditQueryUtils.getQueryCount(creditInfo, 24);*/
+                */
+/*int  queryIn24Month = CreditQueryUtils.getQueryCount(creditInfo, 24);*//*
+
                 queryCreditJson.put("queryIn1Month", queryIn1Month);
                 queryCreditJson.put("queryIn3Month", queryIn3Month);
                 queryCreditJson.put("queryIn6Month", queryIn6Month);
@@ -406,13 +419,15 @@ public class QueryCreditSummaryInfoService {
         return result;
     }
 
-    /**
+    */
+/**
      * @Author xiehanchun
      * @Description //TODO
      * @Date 2020/7/24
      * @Param [list, month]
      * @return int
-     **/
+     **//*
+
     private int queryInMonth(List<TPerCreditQueryDetail> list,int month){
         int number = 0;
         if(month ==1){
@@ -427,13 +442,15 @@ public class QueryCreditSummaryInfoService {
     }
 
 
-    /**
+    */
+/**
      * @Author xiehanchun
      * @Description //查询征信次数
      * @Date 2020/7/24
      * @Param [list]
      * @return int
-     **/
+     **//*
+
     private int queryCreditInvesNum(List<TPerCreditQueryDetail> list,int month){
         return list.stream()
                 .filter(e -> {
@@ -467,13 +484,15 @@ public class QueryCreditSummaryInfoService {
                 .size();
     }
 
-    /**
+    */
+/**
      * @Author xiehanchun
      * @Description //日期格式化
      * @Date 2020/7/24
      * @Param [date, format]
      * @return java.util.Date
-     **/
+     **//*
+
     private static Date getReportDate(String date, String format)  {
         SimpleDateFormat sdf = new SimpleDateFormat(format);
         date = date.replace(".", "-");
@@ -487,3 +506,4 @@ public class QueryCreditSummaryInfoService {
         return now;
     }
 }
+*/

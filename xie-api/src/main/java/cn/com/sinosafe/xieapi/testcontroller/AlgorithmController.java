@@ -440,9 +440,40 @@ public class AlgorithmController {
 //         }
 //         TestClass testClass = new TestClass();
 //         testClass.sortAg();
+         MyBinarySearchTree my = new MyBinarySearchTree();
+         my.addNode(1);
+         my.addNode(2);
+         my.addNode(3);
+         my.addNode(2);
+         my.addNode(4);
+         my.addNode(5);
+         my.addNode(4);
+         my.addNode(0);
+         my.addNode(0);
+         my.addNode(5);
+         my.addNode(0);
+         my.addNode(0);
+         my.addNode(3);
+         my.addNode(6);
+         my.addNode(7);
+         my.addNode(6);
+         my.addNode(0);
+         my.addNode(0);
+         my.addNode(7);
+         my.addNode(8);
+         my.addNode(0);
+         my.addNode(8);
+         my.addNode(0);
+         my.addNode(0);
+         ByteBounce bounce = new ByteBounce();
 
-           ByteBounce bounce = new ByteBounce();
+         MyBinarySearchTree q = new MyBinarySearchTree();
+         q.addNode(4);
 
+         MyBinarySearchTree p = new MyBinarySearchTree();
+         p.addNode(5);
+         TreeNode node = bounce.lowestCommonAncestor(my.current, q.root, p.root);
+         System.out.println(node.data);
      }
 
 

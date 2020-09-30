@@ -1,3 +1,4 @@
+/*
 package cn.com.sinosafe.xiecommon.config;
 
 import lombok.Data;
@@ -23,4 +24,4 @@ public interface Credit2FeignClient {
         private String readNew;
     }
 
-}
+}*/
