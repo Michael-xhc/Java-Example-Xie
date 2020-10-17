@@ -5,7 +5,7 @@
  * date: 2020-03-09 15:35
  * copyright(c) 2019-  华安保险公司
  */
-package cn.com.sinosafe.xie.operation.service;
+package cn.com.sinosafe.xie.operation.service.operation;
 
 /**
  * @version: v1.0
