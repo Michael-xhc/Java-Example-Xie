@@ -15,7 +15,7 @@ import cn.com.sinosafe.xiecommon.code.ResultCode;
  * @packageName: cn.com.sinosafe.xiecommon.utils
  * @className: AgentJsonProtocol
  * @author: xiehanchun
- * @data: 2020-03-29 12:10
+ * @data: 2020-03-29 12:10 分担
  * @version: v1.0
  */
 public class AgentJsonProtocol {
