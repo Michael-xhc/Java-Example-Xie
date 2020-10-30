@@ -19,140 +19,15 @@
     </parent>
 
     <modules>
-        <module>xie-api</module>
-        <module>xie-admin</module>
-        <module>xie-product</module>
-        <module>xie-operation</module>
-        <module>xie-common</module>
-        <module>xie-user</module>
-        <module>xie-cost</module>
     </modules>
 
     <properties>
-        <agent.version>0.0.1-SNAPSHOT</agent.version>
-        <java.version>1.8</java.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <pagehelper.boot.version>1.2.5</pagehelper.boot.version>
-        <starter-feign-version>1.4.3.RELEASE</starter-feign-version>
-        <spring-beans-version>4.3.22.RELEASE</spring-beans-version>
-        <slf4j-api-version>1.7.25</slf4j-api-version>
-        <spring-context-version>4.3.12.RELEASE</spring-context-version>
-        <fastjson-version>1.2.60</fastjson-version>
-        <mysql-connector-java-version>5.1.46</mysql-connector-java-version>
-        <mybatis-spring-version>1.3.2</mybatis-spring-version>
-        <mybatis-spring-boot-starter-version>1.3.2</mybatis-spring-boot-starter-version>
-        <lombok-version>1.18.8</lombok-version>
-        <!-- Spring Settings -->
-        <spring-cloud.version>Hoxton.SR1</spring-cloud.version>
-        <spring-cloud-alibaba.version>1.5.1.RELEASE</spring-cloud-alibaba.version>
     </properties>
 
     <dependencyManagement>
-        <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
         <dependencies>
-            <!--<dependency>-->
-                <!--<groupId>org.springframework</groupId>-->
-                <!--<artifactId>spring-beans</artifactId>-->
-                <!--<version>${spring-beans-version}</version>-->
-            <!--</dependency>-->
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j-api-version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework/spring-beans -->
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-context</artifactId>
-                <version>${spring-context-version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-            <dependency>
-                <groupId>com.alibaba</groupId>
-                <artifactId>fastjson</artifactId>
-                <version>${fastjson-version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-            <dependency>
-                <groupId>mysql</groupId>
-                <artifactId>mysql-connector-java</artifactId>
-                <version>${mysql-connector-java-version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
-            <dependency>
-                <groupId>org.mybatis</groupId>
-                <artifactId>mybatis-spring</artifactId>
-                <version>${mybatis-spring-version}</version>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.mybatis.spring.boot/mybatis-spring-boot-starter -->
-            <dependency>
-                <groupId>org.mybatis.spring.boot</groupId>
-                <artifactId>mybatis-spring-boot-starter</artifactId>
-                <version>${mybatis-spring-boot-starter-version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok-version}</version>
-                <scope>provided</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-dependencies -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-starter-alibaba-nacos-discovery -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${spring-cloud-alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
-    <repositories>
-        <repository>
-            <id>public</id>
-            <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>public</id>
-            <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 </project>

@@ -7,19 +7,14 @@
         <artifactId>Haxb-Outsource-Xie</artifactId>
         <version>${agent.version}</version>
     </parent>
-    <!--？？？？？-->
+
     <packaging>jar</packaging>
     <groupId>cn.com.sinosafe</groupId>
     <artifactId>xie-cost</artifactId>
     <name>xie-cost</name>
-    <!--？？？？？-->
     <url>http://maven.apache.org</url>
     <description>费用接口</description>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
     </dependencies>
 </project>
