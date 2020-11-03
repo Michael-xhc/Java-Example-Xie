@@ -1,5 +1,5 @@
 <p align="center">
- <img src="https://img.shields.io/badge/Spring%20Boot-1.5.RELEASE-blue.svg" alt="Downloads">
+    <img src="https://img.shields.io/badge/Spring%20Boot-2.0.4.RELEASE-blue.svg" alt="Downloads">
 </p>
 
 ## 2020技术总结：
@@ -32,9 +32,48 @@
 - 11、业务解决方案：
 搜素业务场景解决方案、日志收集与分析场景解决方案、工作流引擎场景解决方案、任务调度场景解决方案、地图开发平台场景解决方案、支付开放平台场景解决方案、图表可视化场景解决方案
 
-操作系统、计算机网络、编程原理、数据结构与算法、数据库
+## Java
+- [x] 操作系统
+- [x] 计算机网络
+- [x] 编程原理
+- [x] 数据结构与算法
+- [x] 数据库
 
-聪明人 都是依据事实做决策判断 而非凭感觉 ：依据细节事实做判断，而非凭感觉臆断
-聪明人 都具备从1到N的演绎能力
-聪明人 还具备复杂事物的简化能力
-《教父》 半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人 注定是截然不同的命运
+## 摘录
+- 1、聪明人 都是依据事实做决策判断 而非凭感觉 ：依据细节事实做判断，而非凭感觉臆断
+- 2、聪明人 都具备从1到N的演绎能力
+- 3、聪明人 还具备复杂事物的简化能力
+- 4、《教父》 半秒钟就看透事物本质的人，和花一辈子都看不清事物本质的人 注定是截然不同的命运
+
+**重启服务器脚本:**
+```shell
+#!/bin/sh
+kill -9 $(ps -ef|grep -i HAXB-Rest-Agent-Api.jar|grep -v grep|awk '{print $2}')
+sleep 2
+
+export JAVA_HOME=/app/jdk1.8.0_11
+export PATH=$JAVA_HOME/bin:$PATH
+export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+```
+
+**远程调试参数（执行脚本）:**
+```shell
+cd /app/Agent-Api-uat/
+java -Xdebug -Xrunjdwp:transport=dt_socket,address=3007,server=y,suspend=n  -jar HAXB-Rest-Agent-Api.jar --spring.profiles.active=uat&
+```
+
+```java
+/** 
+ *（标签）
+ */
+public class NettyServerMain {
+} 
+```
+
+> 网址：
+[rabbitmq教程链接](https://blog.csdn.net/hellozpc/article/details/81436980)
+[dubbo文档](http://dubbo.apache.org/zh-cn/docs/user/new-features-in-a-glance.html)
+[下载IDEA、PyCharm、PhpStorm免费激活码](http://idea.94goo.com/key)
+[使用Hibernate-Validator优雅的验证参数](https://blog.csdn.net/qq_32258777/article/details/86743416)
+
+

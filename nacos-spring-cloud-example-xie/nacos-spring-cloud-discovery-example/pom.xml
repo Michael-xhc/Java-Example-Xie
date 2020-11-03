@@ -10,8 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>nacos-spring-cloud-discovery-example</artifactId>
-
-<!--    <packaging>pom</packaging>-->
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>nacos-spring-cloud-provider-example</module>
@@ -38,11 +38,19 @@
                 <artifactId>nacos-client</artifactId>
                 <version>1.1.0</version>
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+<!--            <dependency>-->
+<!--                <groupId>org.apache.httpcomponents</groupId>-->
+<!--                <artifactId>httpclient</artifactId>-->
+<!--                <version>4.5.6</version>-->
+<!--            </dependency>-->
+
         </dependencies>
     </dependencyManagement>
 
 
-<!--    <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -56,6 +64,6 @@
                 </executions>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
 
 </project>

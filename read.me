@@ -27,26 +27,3 @@
                       通过信代专家平台，在客户体验上可通过去渠道化降低客户的借贷成本；在营销上可以依赖互联网营销扩大产品传播范围、知名度，借助社会化营销获得更多优质客源。
 
     怎么搭建项目：根据需求确定需要多少张表 表结构 表关联 项目搭建（技术） 统一规范 然后按流程做curd；
-
-
-重启服务器脚本:
-#!/bin/sh
-kill -9 $(ps -ef|grep -i HAXB-Rest-Agent-Api.jar|grep -v grep|awk '{print $2}')
-sleep 2
-
-export JAVA_HOME=/app/jdk1.8.0_11
-export PATH=$JAVA_HOME/bin:$PATH
-export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-
-#远程调试参数（执行脚本）
-cd /app/Agent-Api-uat/
-java -Xdebug -Xrunjdwp:transport=dt_socket,address=3007,server=y,suspend=n  -jar HAXB-Rest-Agent-Api.jar --spring.profiles.active=uat&
-
-分支合并测试
-
-rabbitmq教程链接:https://blog.csdn.net/hellozpc/article/details/81436980;
-
-dubbo文档
-http://dubbo.apache.org/zh-cn/docs/user/new-features-in-a-glance.html
-
-下载IDEA、PyCharm、PhpStorm免费激活码：http://idea.94goo.com/key

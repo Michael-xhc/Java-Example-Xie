@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8083
 
 spring:
   application:
@@ -10,3 +10,8 @@ spring:
         server-addr: 127.0.0.1:8848
         group: dev
         namespace: xhc
+        config:
+          server-addr: 127.0.0.1:8848
+          file-extension: yaml
+          group: ${spring.profiles.active}
+          namespace: xhc

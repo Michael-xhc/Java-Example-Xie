@@ -18,10 +18,11 @@
     </properties>
 
     <dependencies>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -33,6 +34,12 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
             <version>${spring-cloud-openfeign.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>5.1.0.Final</version>
         </dependency>
 
         <dependency>
@@ -49,10 +56,44 @@
             <groupId>com.alibaba.nacos</groupId>
             <artifactId>nacos-client</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
+            <version>Unknown</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
+            <version>Unknown</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
+            <version>Unknown</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
+            <version>Unknown</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.sinosafe</groupId>
+            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
+            <version>Unknown</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
-<!--    <build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -73,5 +114,5 @@
                 </configuration>
             </plugin>
         </plugins>
-    </build>-->
+    </build>
 </project>

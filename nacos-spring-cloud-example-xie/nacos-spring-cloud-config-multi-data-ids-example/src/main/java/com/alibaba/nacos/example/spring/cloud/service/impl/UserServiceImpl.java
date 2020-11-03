@@ -10,15 +10,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 //import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * Created by xiehanchun on 2020/10/30
  */
 //@Service
 //@RefreshScope
+@RestController
+@RequestMapping("/user/service")
 public class UserServiceImpl {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
+//    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
 //    private final UserRepository userRepository;
 //
@@ -59,5 +62,10 @@ public class UserServiceImpl {
 //    private String key(Long id) {
 //        return String.format("nacos-spring-cloud-config-multi-data-ids-example:user:%d", id);
 //    }
+
+    @GetMapping("/getStr/{str}")
+    public String getStr(@PathVariable(value = "str") String str){
+        return "hello " + str;
+    }
 
 }
