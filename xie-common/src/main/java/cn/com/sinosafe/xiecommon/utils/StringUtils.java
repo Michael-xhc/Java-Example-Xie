@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 * @Param
 * @return
 */
-public class StringUtils extends org.apache.commons.lang3.StringUtils
+public class StringUtils
 {
     /** 空字符串 */
     private static final String NULLSTR = "";

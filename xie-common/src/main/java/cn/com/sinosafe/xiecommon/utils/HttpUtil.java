@@ -24,8 +24,8 @@ import org.apache.http.ssl.SSLContextBuilder;
 import org.apache.http.ssl.TrustStrategy;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EntityUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import javax.net.ssl.SSLContext;
 import java.io.BufferedReader;
@@ -55,7 +55,7 @@ import java.util.Map.Entry;
  * @return
  */
 public class HttpUtil {
-   private static final Logger log = LoggerFactory.getLogger(HttpUtil.class);
+//   private static final Logger log = LoggerFactory.getLogger(HttpUtil.class);
 
 	public static class UTF8PostMethod extends PostMethod {
 		public UTF8PostMethod(String url) {
@@ -334,7 +334,7 @@ public class HttpUtil {
         try
         {
             String urlNameString = url + "?" + param;
-            log.info("sendGet - {}", urlNameString);
+//            log.info("sendGet - {}", urlNameString);
             URL realUrl = new URL(urlNameString);
             URLConnection connection = realUrl.openConnection();
             connection.setRequestProperty("accept", "*/*");
@@ -347,23 +347,23 @@ public class HttpUtil {
             {
                 result.append(line);
             }
-            log.info("recv - {}", result);
+//            log.info("recv - {}", result);
         }
         catch (ConnectException e)
         {
-            log.error("调用HttpUtils.sendGet ConnectException, url=" + url + ",param=" + param, e);
+//            log.error("调用HttpUtils.sendGet ConnectException, url=" + url + ",param=" + param, e);
         }
         catch (SocketTimeoutException e)
         {
-            log.error("调用HttpUtils.sendGet SocketTimeoutException, url=" + url + ",param=" + param, e);
+//            log.error("调用HttpUtils.sendGet SocketTimeoutException, url=" + url + ",param=" + param, e);
         }
         catch (IOException e)
         {
-            log.error("调用HttpUtils.sendGet IOException, url=" + url + ",param=" + param, e);
+//            log.error("调用HttpUtils.sendGet IOException, url=" + url + ",param=" + param, e);
         }
         catch (Exception e)
         {
-            log.error("调用HttpsUtil.sendGet Exception, url=" + url + ",param=" + param, e);
+//            log.error("调用HttpsUtil.sendGet Exception, url=" + url + ",param=" + param, e);
         }
         finally
         {
@@ -376,7 +376,7 @@ public class HttpUtil {
             }
             catch (Exception ex)
             {
-                log.error("调用in.close Exception, url=" + url + ",param=" + param, ex);
+//                log.error("调用in.close Exception, url=" + url + ",param=" + param, ex);
             }
         }
         return result.toString();

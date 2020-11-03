@@ -7,8 +7,8 @@ import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddressList;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFDataValidation;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -24,7 +24,7 @@ import java.util.*;
  * @author sinosafe
  */
 public class ExcelUtil<T> {
-    private static final Logger log = LoggerFactory.getLogger(ExcelUtil.class);
+//    private static final Logger log = LoggerFactory.getLogger(ExcelUtil.class);
 
     /**
      * Excel sheet最大行数，默认65536
@@ -82,7 +82,7 @@ public class ExcelUtil<T> {
      */
     private void createExcelField() {
         this.fields = new ArrayList<Field>();
-        List<Field> tempFields = new ArrayList<>();
+        List<Field> tempFields = new ArrayList<Field>();
         Class<?> tempClass = clazz;
         tempFields.addAll(Arrays.asList(clazz.getDeclaredFields()));
         while (tempClass != null) {
@@ -136,7 +136,7 @@ public class ExcelUtil<T> {
      * @return 转换后集合
      */
     public List<T> importExcel(InputStream input) throws Exception {
-        return importExcel(StringUtils.EMPTY, input);
+        return importExcel(org.apache.commons.lang3.StringUtils.EMPTY, input);
     }
 
     /**
@@ -147,7 +147,7 @@ public class ExcelUtil<T> {
      * @return 转换后集合
      */
     private List<T> importExcel(String sheetName, InputStream input) throws Exception {
-        List<T> list = new ArrayList<>();
+        List<T> list = new ArrayList<T>();
 
         Workbook workbook = WorkbookFactory.create(input);
         Sheet sheet = null;
@@ -171,7 +171,7 @@ public class ExcelUtil<T> {
             // 有数据时才处理 得到类的所有field.
             Field[] allFields = clazz.getDeclaredFields();
             // 定义一个map用于存放列的序号和field.
-            Map<Integer, Field> fieldsMap = new HashMap<>(16);
+            Map<Integer, Field> fieldsMap = new HashMap<Integer, Field>(16);
             for (int col = 0; col < allFields.length; col++) {
                 Field field = allFields[col];
                 // 将有注解的field存放到map中.
@@ -316,7 +316,7 @@ public class ExcelUtil<T> {
             wb.write(out);
             return new AgentJsonProtocol(AgentJsonProtocol.success().getCode(), filename);
         } catch (Exception e) {
-            log.error("导出Excel异常{}", e.getMessage());
+//            log.error("导出Excel异常{}", e.getMessage());
             throw new Exception("导出Excel失败，请联系网站管理员！");
         } finally {
             if (wb != null) {
@@ -389,7 +389,7 @@ public class ExcelUtil<T> {
                         }
                     }
                 } catch (Exception e) {
-                    log.error("导出Excel失败{}", e);
+//                    log.error("导出Excel失败{}", e);
                 }
             }
         }
@@ -671,7 +671,7 @@ public class ExcelUtil<T> {
                                 }
                             }
                         } catch (Exception e) {
-                            log.error("导出Excel失败{}", e.getMessage());
+//                            log.error("导出Excel失败{}", e.getMessage());
                         }
                     }
                 }
@@ -681,7 +681,7 @@ public class ExcelUtil<T> {
             workbook.write(out);
             return new AgentJsonProtocol(AgentJsonProtocol.success().getCode(), filename);
         } catch (Exception e) {
-            log.error("导出Excel异常{}", e.getMessage());
+//            log.error("导出Excel异常{}", e.getMessage());
             return new AgentJsonProtocol(AgentJsonProtocol.fail().getCode(), "导出Excel失败，请联系网站管理员！");
         } finally {
             if (workbook != null) {

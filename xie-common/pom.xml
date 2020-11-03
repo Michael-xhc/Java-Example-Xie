@@ -2,15 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>6</source>-->
+<!--                    <target>6</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
     <parent>
         <groupId>cn.com.sinosafe</groupId>
         <artifactId>Haxb-Outsource-Xie</artifactId>
-        <version>${agent.version}</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>cn.com.sinosafe</groupId>
+
     <artifactId>xie-common</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <description>公共服务模块</description>
+
 
     <dependencies>
         <!--Google的Zxing包-->
@@ -37,10 +48,10 @@
             <version>0.4.6</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-api</artifactId>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -54,16 +65,16 @@
             <version>3.17</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-context</artifactId>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.2.1.RELEASE</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-web</artifactId>-->
+<!--            <version>5.2.1.RELEASE</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-web -->
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -124,11 +135,11 @@
             <!--<artifactId>spring-data-redis</artifactId>-->
             <!--<version>1.8.18.RELEASE</version>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-            <version>1.5.8.RELEASE</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--            <version>1.5.8.RELEASE</version>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
         <!--<dependency>-->
             <!--<groupId>org.springframework.boot</groupId>-->
@@ -148,33 +159,38 @@
             <version>5.1.8</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-autoconfigure</artifactId>
-            <version>1.3.1.RELEASE</version>
-        </dependency>
-
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-autoconfigure</artifactId>-->
+<!--            <version>1.3.1.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>commons-codec</groupId>-->
+<!--            <artifactId>commons-codec</artifactId>-->
+<!--            <version>1.14</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <!-- Cfca大数据 -->
-        <dependency>
+       <!-- <dependency>
             <groupId>cpcn.dsp</groupId>
             <artifactId>cpcn-dsp-api</artifactId>
             <version>1.0.0.33</version>
-        </dependency>
+        </dependency>-->
         <!-- 百融大数据 -->
-        <dependency>
+    <!--    <dependency>
             <groupId>com.bsapi</groupId>
             <artifactId>bsapi-shaded</artifactId>
             <version>3.6.2</version>
-        </dependency>
+        </dependency>-->
         <!-- 征信规则包 -->
-        <dependency>
+ <!--       <dependency>
             <groupId>cn.com.sinosafe</groupId>
             <artifactId>ha-xb-xom</artifactId>
             <version>0.0.2</version>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>

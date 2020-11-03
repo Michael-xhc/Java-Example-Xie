@@ -8,7 +8,8 @@
 package cn.com.sinosafe.xiecommon.utils;
 
 import com.alibaba.fastjson.JSONObject;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+//import lombok.extern.slf4j.Slf4j;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -24,7 +25,7 @@ import java.net.URL;
  * @data: 2020-05-26 17:17
  * @version: v1.0
  */
-@Slf4j
+//@Slf4j
 public class LocationUtils {
 
     /**
@@ -46,7 +47,7 @@ public class LocationUtils {
      */
     public static String getAdd(String lng, String lat) {
         String baiduUrl = LONGITUDE_TO_ADDRESS_URL + "&ak=" + AK + "&location=" + lat + "," + lng;
-        log.info("请求url:" + baiduUrl);
+//        log.info("请求url:" + baiduUrl);
         String res = null;
         BufferedReader in = null;
         try {
@@ -65,7 +66,7 @@ public class LocationUtils {
                 return res;
             }
         } catch (Exception e) {
-            log.info("根据经纬度定位失败，error："+e.getMessage());
+//            log.info("根据经纬度定位失败，error："+e.getMessage());
         } finally{
             try{
                 in.close();

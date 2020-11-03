@@ -6,28 +6,19 @@
 
     <groupId>cn.com.sinosafe</groupId>
     <artifactId>Haxb-Outsource-Xie</artifactId>
-    <version>${agent.version}</version>
-    <packaging>pom</packaging>
-    <name>parent.project</name>
-    <description>华安外包工程</description>
-
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.5.8.RELEASE</version>
-        <relativePath/>
-    </parent>
+    <version>0.0.1-SNAPSHOT</version>
+<!--    <packaging>pom</packaging>-->
+<!--    <version>${agent.version}</version>-->
+    <description>Java学习例子</description>
 
     <modules>
+        <module>nacos-spring-cloud-example-xie</module>
+        <module>algorithm-demo-xie</module>
+        <module>xie-common</module>
+        <module>xie-x</module>
+        <module>xie-xx</module>
+        <module>xie-xxx</module>
+        <module>xie-xxxx</module>
     </modules>
-
-    <properties>
-    </properties>
-
-    <dependencyManagement>
-        <dependencies>
-        </dependencies>
-    </dependencyManagement>
-
 
 </project>

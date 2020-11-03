@@ -3,8 +3,8 @@ package cn.com.sinosafe.xiecommon.utils;
 import cn.com.sinosafe.xiecommon.code.AgentResponseCode;
 import cn.com.sinosafe.xiecommon.code.ResultCode;
 import cn.com.sinosafe.xiecommon.exception.BusinessException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.util.regex.Pattern;
 
@@ -18,7 +18,7 @@ import java.util.regex.Pattern;
  */
 public class ParamUtils {
 
-    private static final Logger log = LoggerFactory.getLogger(ParamUtils.class);
+//    private static final Logger log = LoggerFactory.getLogger(ParamUtils.class);
 
     /**
      * 对象参数不能为空
@@ -27,7 +27,7 @@ public class ParamUtils {
      */
         public static void notNull(Object obj, String name) {
         if (StringUtils.isNull(obj)) {
-            log.error(String.format("参数校验失败,[%s]为空", name));
+//            log.error(String.format("参数校验失败,[%s]为空", name));
             throw new BusinessException(AgentResponseCode.NULL_PARAM, true, name);
         }
     }
@@ -39,7 +39,7 @@ public class ParamUtils {
      */
     public static void notEmpty(String content, String name) {
         if (StringUtils.isEmpty(content)) {
-            log.error(String.format("参数校验失败,[%s]为空", name));
+//            log.error(String.format("参数校验失败,[%s]为空", name));
             throw new BusinessException(AgentResponseCode.NULL_PARAM, true, name);
         }
     }
@@ -66,7 +66,7 @@ public class ParamUtils {
      */
     public static void compareNum(int a, int b,String name) {
         if (a<b) {
-            log.error(String.format("参数校验失败,[%s]为空", name));
+//            log.error(String.format("参数校验失败,[%s]为空", name));
             throw new BusinessException(AgentResponseCode.NULL_PARAM, true, name);
         }
     }

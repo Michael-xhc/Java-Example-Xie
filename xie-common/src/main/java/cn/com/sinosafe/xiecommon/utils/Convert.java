@@ -568,25 +568,22 @@ public class Convert {
             return defaultValue;
         }
         valueStr = valueStr.trim().toLowerCase();
-        switch (valueStr)
-        {
-            case "true":
-                return true;
-            case "false":
-                return false;
-            case "yes":
-                return true;
-            case "ok":
-                return true;
-            case "no":
-                return false;
-            case "1":
-                return true;
-            case "0":
-                return false;
-            default:
-                return defaultValue;
+        if ("true".equals(valueStr)) {
+            return true;
+        } else if ("false".equals(valueStr)) {
+            return false;
+        } else if ("yes".equals(valueStr)) {
+            return true;
+        } else if ("ok".equals(valueStr)) {
+            return true;
+        } else if ("no".equals(valueStr)) {
+            return false;
+        } else if ("1".equals(valueStr)) {
+            return true;
+        } else if ("0".equals(valueStr)) {
+            return false;
         }
+        return defaultValue;
     }
 
     /**

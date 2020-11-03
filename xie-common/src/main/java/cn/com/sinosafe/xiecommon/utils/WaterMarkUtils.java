@@ -1,6 +1,6 @@
 package cn.com.sinosafe.xiecommon.utils;
 
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -13,7 +13,7 @@ import java.io.IOException;
  * 平台拍照助手 添加水印
  * Created by xiehanchun on 2020/7/1
  */
-@Slf4j
+//@Slf4j
 public class WaterMarkUtils {
     
     /**
@@ -60,7 +60,7 @@ public class WaterMarkUtils {
             //关闭流
             outputStream.close();
         } catch (IOException e) {
-            log.info("【平台拍照助手】 图片添加水印失败："+e.getMessage());
+//            log.info("【平台拍照助手】 图片添加水印失败："+e.getMessage());
             e.printStackTrace();
         }
     }

@@ -1,5 +1,7 @@
 package cn.com.sinosafe.xiecommon.utils;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.HashSet;
 import java.util.regex.Pattern;
 

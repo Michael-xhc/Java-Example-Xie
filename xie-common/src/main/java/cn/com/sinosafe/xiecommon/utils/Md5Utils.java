@@ -1,7 +1,7 @@
 package cn.com.sinosafe.xiecommon.utils;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 
 import java.security.MessageDigest;
 
@@ -12,7 +12,7 @@ import java.security.MessageDigest;
  */
 public class Md5Utils
 {
-    private static final Logger log = LoggerFactory.getLogger(Md5Utils.class);
+//    private static final Logger log = LoggerFactory.getLogger(Md5Utils.class);
 
     private static byte[] md5(String s)
     {
@@ -27,7 +27,7 @@ public class Md5Utils
         }
         catch (Exception e)
         {
-            log.error("MD5 Error...", e);
+//            log.error("MD5 Error...", e);
         }
         return null;
     }
@@ -60,7 +60,7 @@ public class Md5Utils
         }
         catch (Exception e)
         {
-            log.error("not supported charset...{}", e);
+//            log.error("not supported charset...{}", e);
             return s;
         }
     }
