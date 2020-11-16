@@ -31,6 +31,18 @@ public class ConsumerController {
 //        return null;
     }
 
+    /**
+      * @Author xiehanchun
+      * @Description //TODO
+      * @Date 2020/11/13
+      * @Param
+      * @return
+      * 并发：通过加版本锁解决
+      * 分布式锁 seata
+      * 事件 监听 Source：事件源，即触发事件的对象； EventObject：事件对象，即带有 EventSource 信息的事件对象，是对EventSource的包装；Eventlistener：事件监听器，对该事件的处理。；
+      * 网关 gateway zuul
+      *
+      */
     @GetMapping("/getStr/{str}")
     public String getStr(@PathVariable(value = "str") String str){
         System.out.println("----------"+str);

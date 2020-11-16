@@ -60,36 +60,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
-            <version>Unknown</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
-            <version>Unknown</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
-            <version>Unknown</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
-            <version>Unknown</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.com.sinosafe</groupId>
-            <artifactId>nacos-spring-cloud-config-multi-data-ids-example</artifactId>
-            <version>Unknown</version>
-            <scope>compile</scope>
-        </dependency>
 
     </dependencies>
 

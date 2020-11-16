@@ -1,6 +1,8 @@
 package cn.com.sinosafe.xiecommon.utils;
 
 import com.alibaba.fastjson.JSONObject;
+import com.sun.org.slf4j.internal.Logger;
+import com.sun.org.slf4j.internal.LoggerFactory;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
@@ -240,7 +242,7 @@ public class HttpUtil {
 	   	  try {
 	   	    SSLContext sslContext = new SSLContextBuilder().setProtocol("TLSv1.2").loadTrustMaterial(null, new TrustStrategy() {
 	   	    //信任所有
-	   	        @Override
+//	   	        @Override
 	            public boolean isTrusted(X509Certificate[] chain, String authType) throws CertificateException {
 	   	            return true;
 	   	        }

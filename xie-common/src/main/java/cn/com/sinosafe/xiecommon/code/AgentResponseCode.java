@@ -27,4 +27,5 @@ public class AgentResponseCode extends ResultCode{
     public static final ResultCode ERROR_LOGIN_TYPE = new ResultCode(1000002, "不支持的登录类型");
     public static final ResultCode NULL_USER = new ResultCode(1000003, "账号不存在!");
     public static final ResultCode UN_LOGIN_USER = new ResultCode(1000004, "账号不可用!");
+    public static final String POST_ID = "x-post-id";
 }

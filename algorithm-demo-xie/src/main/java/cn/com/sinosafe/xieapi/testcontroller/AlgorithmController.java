@@ -10,6 +10,8 @@ package cn.com.sinosafe.xieapi.testcontroller;
 
 //import lombok.extern.slf4j.Slf4j;
 
+import java.util.LinkedList;
+
 /**
  * @description: 测试
  * @packageName: cn.com.sinosafe.xieapi.testcontroller
@@ -420,8 +422,8 @@ public class AlgorithmController {
       * @Param
       * @return
      **/
-     public static void main(String[] args) {
-         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
+//     public static void main(String[] args) {
+//         char[][] board ={{'A','B','C','E'},{'S','F','C','S'},{'A','D','E','E'}};
 //         char[][] board ={{'A','B'},{'S','F'}};
 //         String word = "ABCC";
 //         cn.com.sinosafe.xieapi.testcontroller.WordSerSolution w = new cn.com.sinosafe.xieapi.testcontroller.WordSerSolution();
@@ -440,41 +442,71 @@ public class AlgorithmController {
 //         }
 //         TestClass testClass = new TestClass();
 //         testClass.sortAg();
-         MyBinarySearchTree my = new MyBinarySearchTree();
-         my.addNode(1);
-         my.addNode(2);
-         my.addNode(3);
-         my.addNode(2);
-         my.addNode(4);
-         my.addNode(5);
-         my.addNode(4);
-         my.addNode(0);
-         my.addNode(0);
-         my.addNode(5);
-         my.addNode(0);
-         my.addNode(0);
-         my.addNode(3);
-         my.addNode(6);
-         my.addNode(7);
-         my.addNode(6);
-         my.addNode(0);
-         my.addNode(0);
-         my.addNode(7);
-         my.addNode(8);
-         my.addNode(0);
-         my.addNode(8);
-         my.addNode(0);
-         my.addNode(0);
-         ByteBounce bounce = new ByteBounce();
+//         MyBinarySearchTree my = new MyBinarySearchTree();
+//         my.addNode(1);
+//         my.addNode(2);
+//         my.addNode(3);
+//         my.addNode(2);
+//         my.addNode(4);
+//         my.addNode(5);
+//         my.addNode(4);
+//         my.addNode(0);
+//         my.addNode(0);
+//         my.addNode(5);
+//         my.addNode(0);
+//         my.addNode(0);
+//         my.addNode(3);
+//         my.addNode(6);
+//         my.addNode(7);
+//         my.addNode(6);
+//         my.addNode(0);
+//         my.addNode(0);
+//         my.addNode(7);
+//         my.addNode(8);
+//         my.addNode(0);
+//         my.addNode(8);
+//         my.addNode(0);
+//         my.addNode(0);
+//         ByteBounce bounce = new ByteBounce();
+//
+//         MyBinarySearchTree q = new MyBinarySearchTree();
+//         q.addNode(4);
+//
+//         MyBinarySearchTree p = new MyBinarySearchTree();
+//         p.addNode(5);
+//         TreeNode node = bounce.lowestCommonAncestor(my.current, q.root, p.root);
+//         System.out.println(node.data);
+//     }
+    
+    /**
+      * @Author xiehanchun
+      * @Description //21. 合并两个有序链表
+      * @Date 2020/11/3
+      * @Param 
+      * @return 
+      */
+    public static void main(String[] args) {
+//        输入：1->2->4, 1->3->4
+//        输出：1->1->2->3->4->4
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        linkedList.add(1);
+        linkedList.add(2);
+        linkedList.add(4);
 
-         MyBinarySearchTree q = new MyBinarySearchTree();
-         q.addNode(4);
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        linkedList.add(1);
+        linkedList.add(3);
+        linkedList.add(4);
 
-         MyBinarySearchTree p = new MyBinarySearchTree();
-         p.addNode(5);
-         TreeNode node = bounce.lowestCommonAncestor(my.current, q.root, p.root);
-         System.out.println(node.data);
-     }
+        LinkedList<Integer> lis = new LinkedList<Integer>();
 
+        for (int i = 0; i < linkedList.size()-1;i++) {
+            for (int j = 0; j < linkedList.size()-i-1;j++) {
+                if(linkedList.get(i) < list.get(j)){
+
+                }
+            }
+        }
+    }
 
 }

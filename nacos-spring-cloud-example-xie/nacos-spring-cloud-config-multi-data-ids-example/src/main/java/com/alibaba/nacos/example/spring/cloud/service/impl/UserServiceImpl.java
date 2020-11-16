@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.*;
 //@RefreshScope
 @RestController
 @RequestMapping("/user/service")
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService{
 
 //    private static final Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
 
