@@ -10,7 +10,7 @@
     <!--以下配置<packaging>pom</packaging>的意思是使用maven分模块管理，都会有一个父级项目，pom文件一个重要的属性就是packaging（打包类型），一般来说所有的父级项目的packaging都为pom，packaging默认类型jar类型，如果不做配置，maven会将该项目打成jar包。-->
     <packaging>pom</packaging>
 <!--    <version>${agent.version}</version>-->
-    <description>Java学习例子</description>
+    <description>Java</description>
 
     <modules>
         <module>nacos-spring-cloud-example-xie</module>
@@ -33,6 +33,12 @@
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.redisson</groupId>-->
+<!--            <artifactId>redisson-spring-boot-starter</artifactId>-->
+<!--            <version>3.13.2</version>-->
+<!--        </dependency>-->
     </dependencies>
     </dependencyManagement>
 
