@@ -1,3 +1,4 @@
+/*
 package cn.com.sinosafe.xiecommon.tool;
 
 
@@ -26,17 +27,23 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-/** AES、DES、DES/CBC/PKCS5Padding、jwt 加密解密, base64 编码解码, md5、sha-1、sha-224、sha-256、sha-384、sha-512 加密算法 */
+*/
+/** AES、DES、DES/CBC/PKCS5Padding、jwt 加密解密, base64 编码解码, md5、sha-1、sha-224、sha-256、sha-384、sha-512 加密算法 *//*
+
 public final class Encrypt {
 
     private static final String AES = "AES";
-    /** aes 加解密时, 长度必须是 16 位的密钥 */
+    */
+/** aes 加解密时, 长度必须是 16 位的密钥 *//*
+
     private static final String AES_SECRET = "&gAe#sEn!cr*yp^t";
     private static final int AES_LEN = 16;
 
     private static final String DES = "DES";
     private static final String DES_CBC_PKCS5PADDING = "DES/CBC/PKCS5Padding";
-    /** des 加解密时, 长度必须是 8 位的密钥 */
+    */
+/** des 加解密时, 长度必须是 8 位的密钥 *//*
+
     private static final String DES_SECRET = "%d#*Es^e";
     private static final int DES_LEN = 8;
 
@@ -50,11 +57,15 @@ public final class Encrypt {
 
     private static final Charset UTF8 = StandardCharsets.UTF_8;
 
-    /** 使用 aes 加密(使用默认密钥) */
+    */
+/** 使用 aes 加密(使用默认密钥) *//*
+
     public static String aesEncode(String data) {
         return aesEncode(data, AES_SECRET);
     }
-    /** 使用 aes 加密 */
+    */
+/** 使用 aes 加密 *//*
+
     public static String aesEncode(String data, String secretKey) {
         if (data == null) {
             throw new RuntimeException("空无需使用 " + AES + " 加密");
@@ -73,11 +84,15 @@ public final class Encrypt {
             throw new RuntimeException(AES + "(" + data + ")加密异常");
         }
     }
-    /** 使用 aes 解密(使用默认密钥) */
+    */
+/** 使用 aes 解密(使用默认密钥) *//*
+
     public static String aesDecode(String data) {
         return aesDecode(data, AES_SECRET);
     }
-    /** 使用 aes 解密 */
+    */
+/** 使用 aes 解密 *//*
+
     public static String aesDecode(String data, String secretKey) {
         if (data == null || data.trim().length() == 0) {
             throw new RuntimeException("空值无需使用 " + AES + " 解密");
@@ -102,11 +117,15 @@ public final class Encrypt {
         }
     }
 
-    /** 使用 des 加密(使用默认密钥) */
+    */
+/** 使用 des 加密(使用默认密钥) *//*
+
     public static String desEncode(String data) {
         return desEncode(data, DES_SECRET);
     }
-    /** 使用 des 加密 */
+    */
+/** 使用 des 加密 *//*
+
     public static String desEncode(String data, String secretKey) {
         if (data == null) {
             throw new RuntimeException("空无需使用 " + DES + " 加密");
@@ -128,11 +147,15 @@ public final class Encrypt {
             throw new RuntimeException(AES + "(" + data + ")加密失败");
         }
     }
-    /** 使用 des 解密(使用默认密钥) */
+    */
+/** 使用 des 解密(使用默认密钥) *//*
+
     public static String desDecode(String data) {
         return desDecode(data, DES_SECRET);
     }
-    /** 使用 des 解密 */
+    */
+/** 使用 des 解密 *//*
+
     public static String desDecode(String data, String secretKey) {
         if (data == null || data.trim().length() == 0) {
             throw new RuntimeException("空值无需使用 " + DES + " 解密");
@@ -160,11 +183,15 @@ public final class Encrypt {
         }
     }
 
-    /** 使用 DES/CBC/PKCS5Padding 加密(使用默认密钥) */
+    */
+/** 使用 DES/CBC/PKCS5Padding 加密(使用默认密钥) *//*
+
     public static String desCbcEncode(String data) {
         return desCbcEncode(data, DES_SECRET);
     }
-    /** 使用 DES/CBC/PKCS5Padding 加密 */
+    */
+/** 使用 DES/CBC/PKCS5Padding 加密 *//*
+
     public static String desCbcEncode(String data, String secretKey) {
         if (data == null) {
             throw new RuntimeException("空无需使用 " + DES_CBC_PKCS5PADDING + " 加密");
@@ -187,11 +214,15 @@ public final class Encrypt {
             throw new RuntimeException(DES_CBC_PKCS5PADDING + "(" + data + ")加密失败");
         }
     }
-    /** 使用 DES/CBC/PKCS5Padding 解密(使用默认密钥) */
+    */
+/** 使用 DES/CBC/PKCS5Padding 解密(使用默认密钥) *//*
+
     public static String desCbcDecode(String data) {
         return desCbcDecode(data, DES_SECRET);
     }
-    /** 使用 DES/CBC/PKCS5Padding 解密 */
+    */
+/** 使用 DES/CBC/PKCS5Padding 解密 *//*
+
     public static String desCbcDecode(String data, String secretKey) {
         if (data == null || data.trim().length() == 0) {
             throw new RuntimeException("空值无需使用 " + DES_CBC_PKCS5PADDING + " 解密");
@@ -222,12 +253,18 @@ public final class Encrypt {
 
     @Data
     public static class RsaPair {
-        /** 公钥, 发给客户端 */
+        */
+/** 公钥, 发给客户端 *//*
+
         private String publicKey;
-        /** 私钥, 保存到文件 */
+        */
+/** 私钥, 保存到文件 *//*
+
         private String privateKey;
     }
-    /** 生成 rsa 的密钥对 */
+    */
+/** 生成 rsa 的密钥对 *//*
+
     public static RsaPair genericRsaKeyPair(int keyLength) {
         try {
             KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance(RSA);
@@ -245,7 +282,9 @@ public final class Encrypt {
             throw new RuntimeException("RSA(" + keyLength + ")生成密钥对时异常");
         }
     }
-    /** 使用 rsa 的公钥加密 */
+    */
+/** 使用 rsa 的公钥加密 *//*
+
     public static String rsaEncode(String publicKey, String data) {
         try {
             byte[] keyBytes = Base64.getDecoder().decode(publicKey.getBytes(UTF8));
@@ -265,7 +304,9 @@ public final class Encrypt {
             throw new RuntimeException("RSA(" + data + ")加密失败");
         }
     }
-    /** 使用 rsa 的私钥解密 */
+    */
+/** 使用 rsa 的私钥解密 *//*
+
     public static String rsaDecode(String privateKey, String data) {
         try {
             byte[] keyBytes = Base64.getDecoder().decode(privateKey.getBytes(UTF8));
@@ -287,22 +328,26 @@ public final class Encrypt {
     }
 
 
-    /**
+    */
+/**
      * bcrypt 慢加密
      *
      * @param password 原密码
      * @return 加密后的密码
-     */
+     *//*
+
     public static String bcryptEncode(String password) {
         return BCrypt.encrypt(password, BCrypt.genSalt());
     }
-    /**
+    */
+/**
      * 验证密码是否相同
      *
      * @param password 原密码
      * @param encryptPass 加密后的密码. 60 位
      * @return 如果加密后相同, 则返回 true
-     */
+     *//*
+
     public static boolean checkBcrypt(String password, String encryptPass) {
         if (encryptPass == null || encryptPass.length() == 0) {
             return false;
@@ -314,28 +359,36 @@ public final class Encrypt {
             return false;
         }
     }
-    /**
+    */
+/**
      * 验证密码是否不相同
      *
      * @param password 原密码
      * @param encryptPass 加密后的密码. 60 位
      * @return 如果加密后不相同, 则返回 true
-     */
+     *//*
+
     public static boolean checkNotBcrypt(String password, String encryptPass) {
         return !checkBcrypt(password, encryptPass);
     }
 
 
-    /** 使用 jwt 将 map 进行编码并使用 aes 加密 */
+    */
+/** 使用 jwt 将 map 进行编码并使用 aes 加密 *//*
+
     public static String jwtEncode(Map<String, Object> map) {
         return aesEncode(JWT_SIGNER.sign(map));
     }
-    /** 将 map 设置过期时间且进行 jwt 编码并使用 aes 加密 */
+    */
+/** 将 map 设置过期时间且进行 jwt 编码并使用 aes 加密 *//*
+
     public static String jwtEncode(Map<String, Object> map, long time, TimeUnit unit) {
         map.put(JWTVerifier.EXP, System.currentTimeMillis() + unit.toMillis(time));
         return jwtEncode(map);
     }
-    /** 使用 aes 解密并解码 jwt 及验证过期和数据完整性, 解码异常 或 数据已过期 或 验证失败 则抛出未登录异常 */
+    */
+/** 使用 aes 解密并解码 jwt 及验证过期和数据完整性, 解码异常 或 数据已过期 或 验证失败 则抛出未登录异常 *//*
+
     public static Map<String, Object> jwtDecode(String data) {
         if (U.isBlank(data)) {
             return Collections.emptyMap();
@@ -364,23 +417,33 @@ public final class Encrypt {
     }
 
 
-    /** 使用 rc4 加密(使用默认密钥) */
+    */
+/** 使用 rc4 加密(使用默认密钥) *//*
+
     public static String rc4Encode(String input) {
         return rc4Encode(input, RC4_SECRET_KEY);
     }
-    /** 使用 rc4 加密 */
+    */
+/** 使用 rc4 加密 *//*
+
     public static String rc4Encode(String input, String key) {
         return base64Encode(rc4(input, key));
     }
-    /** 使用 rc4 解密(使用默认密钥) */
+    */
+/** 使用 rc4 解密(使用默认密钥) *//*
+
     public static String rc4Decode(String input) {
         return rc4Decode(input, RC4_SECRET_KEY);
     }
-    /** 使用 rc4 解密 */
+    */
+/** 使用 rc4 解密 *//*
+
     public static String rc4Decode(String input, String key) {
         return rc4(base64Decode(input), key);
     }
-    /** 使用 rc4 加解密, 如果是密文调用此方法将返回明文 */
+    */
+/** 使用 rc4 加解密, 如果是密文调用此方法将返回明文 *//*
+
     private static String rc4(String input, String key) {
         int[] iS = new int[256];
         byte[] iK = new byte[256];
@@ -418,41 +481,59 @@ public final class Encrypt {
         return new String(iOutputChar);
     }
 
-    /** 使用 base64 编码 */
+    */
+/** 使用 base64 编码 *//*
+
     public static String base64Encode(String src) {
         return new String(Base64.getEncoder().encode(src.getBytes(UTF8)), UTF8);
     }
-    /** 使用 base64 解码 */
+    */
+/** 使用 base64 解码 *//*
+
     public static String base64Decode(String src) {
         return new String(Base64.getDecoder().decode(src.getBytes(UTF8)), UTF8);
     }
 
 
-    /** 生成 md5 值(16 位) */
+    */
+/** 生成 md5 值(16 位) *//*
+
     public static String to16Md5(String src) {
         return toMd5(src).substring(8, 24);
     }
-    /** 生成 md5 值(32 位) */
+    */
+/** 生成 md5 值(32 位) *//*
+
     public static String toMd5(String src) {
         return toHash(src, "md5");
     }
-    /** 生成 sha-1 值(40 位) */
+    */
+/** 生成 sha-1 值(40 位) *//*
+
     public static String toSha1(String src) {
         return toHash(src, "sha-1");
     }
-    /** 生成 sha-224 值(56 位) */
+    */
+/** 生成 sha-224 值(56 位) *//*
+
     public static String toSha224(String src) {
         return toHash(src, "sha-224");
     }
-    /** 生成 sha-256 值(64 位) */
+    */
+/** 生成 sha-256 值(64 位) *//*
+
     public static String toSha256(String src) {
         return toHash(src, "sha-256");
     }
-    /** 生成 sha-384 值(96 位) */
+    */
+/** 生成 sha-384 值(96 位) *//*
+
     public static String toSha384(String src) {
         return toHash(src, "sha-384");
     }
-    /** 生成 sha-512 值(128 位) */
+    */
+/** 生成 sha-512 值(128 位) *//*
+
     public static String toSha512(String src) {
         return toHash(src, "sha-512");
     }
@@ -470,27 +551,39 @@ public final class Encrypt {
         }
     }
 
-    /** 生成文件的 md5 值(32 位) */
+    */
+/** 生成文件的 md5 值(32 位) *//*
+
     public static String toMd5File(String file) {
         return toHashFile(file, "md5");
     }
-    /** 生成文件的 sha-1 值(40 位) */
+    */
+/** 生成文件的 sha-1 值(40 位) *//*
+
     public static String toSha1File(String file) {
         return toHashFile(file, "sha-1");
     }
-    /** 生成文件的 sha-224 值(56 位) */
+    */
+/** 生成文件的 sha-224 值(56 位) *//*
+
     public static String toSha224File(String file) {
         return toHashFile(file, "sha-224");
     }
-    /** 生成文件的 sha-256 值(64 位) */
+    */
+/** 生成文件的 sha-256 值(64 位) *//*
+
     public static String toSha256File(String file) {
         return toHashFile(file, "sha-256");
     }
-    /** 生成文件的 sha-384 值(96 位) */
+    */
+/** 生成文件的 sha-384 值(96 位) *//*
+
     public static String toSha384File(String file) {
         return toHashFile(file, "sha-384");
     }
-    /** 生成文件的 sha-512 值(128 位) */
+    */
+/** 生成文件的 sha-512 值(128 位) *//*
+
     public static String toSha512File(String file) {
         return toHashFile(file, "sha-512");
     }
@@ -512,27 +605,39 @@ public final class Encrypt {
         }
     }
 
-    /** 基于密钥生成 hmac-md5 值(32 位) */
+    */
+/** 基于密钥生成 hmac-md5 值(32 位) *//*
+
     public static String toHmacMd5(String src, String secret) {
         return toHmacHash(src, "HmacMD5", secret);
     }
-    /** 基于密钥生成 hmac-sha-1 值(40 位) */
+    */
+/** 基于密钥生成 hmac-sha-1 值(40 位) *//*
+
     public static String toHmacSha1(String src, String secret) {
         return toHmacHash(src, "HmacSHA1", secret);
     }
-    /** 基于密钥生成 hmac-sha-224 值(56 位) */
+    */
+/** 基于密钥生成 hmac-sha-224 值(56 位) *//*
+
     public static String toHmacSha224(String src, String secret) {
         return toHmacHash(src, "HmacSHA224", secret);
     }
-    /** 基于密钥生成 hmac-sha-256 值(64 位) */
+    */
+/** 基于密钥生成 hmac-sha-256 值(64 位) *//*
+
     public static String toHmacSha256(String src, String secret) {
         return toHmacHash(src, "HmacSHA256", secret);
     }
-    /** 基于密钥生成 hmac-sha-384 值(96 位) */
+    */
+/** 基于密钥生成 hmac-sha-384 值(96 位) *//*
+
     public static String toHmacSha384(String src, String secret) {
         return toHmacHash(src, "HmacSHA384", secret);
     }
-    /** 基于密钥生成 hmac-sha-512 值(128 位) */
+    */
+/** 基于密钥生成 hmac-sha-512 值(128 位) *//*
+
     public static String toHmacSha512(String src, String secret) {
         return toHmacHash(src, "HmacSHA512", secret);
     }
@@ -550,22 +655,28 @@ public final class Encrypt {
         }
     }
 
-    /** 二进制 转换成 十六进制字符串 */
+    */
+/** 二进制 转换成 十六进制字符串 *//*
+
     public static String binary2Hex(byte[] bytes) {
         StringBuilder sbd = new StringBuilder();
         for (byte b : bytes) {
-            /*
+            */
+/*
             String hex = (Integer.toHexString(b & 0XFF));
             if (hex.length() == 1) {
                 sbd.append("0");
             }
             sbd.append(hex);
-            */
+            *//*
+
             sbd.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
         }
         return sbd.toString();
     }
-    /** 十六进制字符串 转换成 二进制 */
+    */
+/** 十六进制字符串 转换成 二进制 *//*
+
     public static byte[] hex2Binary(String data) {
         byte[] bt = data.getBytes(UTF8);
         byte[] bytes = new byte[bt.length / 2];
@@ -576,3 +687,4 @@ public final class Encrypt {
         return bytes;
     }
 }
+*/
